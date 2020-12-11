@@ -1,1 +1,22 @@
 Ecommerce Web App 01
+
+CSS:
+  - Thuộc tính:
+* flexGrow: 1
+
+* [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+  }
+với:
+xs: 0
+sm: 600
+md: 960
+lg: 1280
+xl: 1920
+
+
+
+
+
+

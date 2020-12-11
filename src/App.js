@@ -1,12 +1,32 @@
+import React, { useEffect, useState } from 'react'
 
-import './App.css';
+import {commerce} from './lib/commerce'
+import {Navbar, Products} from './components'
 
-function App() {
+export default function App(){
+  const [products, setProducts] = useState([])
+  console.log('thong20:', products)
+
+  const fetchProducts = async () => {
+    // const response = await commerce.products.list(); // trả về 1 Promise
+    // hoặc nhanh gọn hơn, ta sử dụng destructuring
+    const {data} = await commerce.products.list(); // trả về 1 Promise, và sử dụng destructuring để hứng data
+    console.log('data:',data)
+    setProducts(data)
+  }
+
+
+
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
   return (
-    <div className="App">
-      Ecommerce Web App
+    <div>
+      <Navbar />
+      <Products products={products}/>
     </div>
-  );
+  )
 }
 
-export default App;
+
