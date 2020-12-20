@@ -1,0 +1,183 @@
+Ecommerce Web App 01
+
+## fetch Data
+- fetchProduct: 
+const fetchProduct = async () => {
+  const {data} = await commerce.products.list(); // trả về 1 Object
+  setProducts(data)
+}
+- fetchCart:
+const fetchCart = async () => {
+  const cart = await commerce.cart.retrieve(); // trả về 1 Object
+  setCart(cart)
+}
+
+========================================================================
+## CSS:
+  - Thuộc tính:
+* flexGrow: 1
+
+* [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+  }
+với:
+xs: 0
+sm: 600
+md: 960
+lg: 1280
+xl: 1920
+
+* gutterButtom của Typography ở file Cart.js
+thuộc tính này giống như padding/margin Bottom
+
+===========================================================================
+## Chuyển string thành thẻ HTML
+Sử dụng thuộc tính dangerouslySetInnerHTML
+link: https://medium.com/@uigalaxy7/how-to-render-html-in-react-7f3c73f5cafc
+vd:
+<Typography variant='body2' color='textSecondary'>
+  {product.description}
+</Typography>
+=> Khi sử dụng thuộc tính dangerouslySetInnerHTML, ta code:
+<Typography dangerouslySetInnerHTML={{ __html: product.description }} variant='body2' color='textSecondary' />
+
+============================================================================
+## <> </>
+đây là thẻ React Fragment
+component này được sinh ra để giải quyết sự phân mảnh
+tìm hiểu thêm tại link: https://reactjs.org/docs/fragments.html
+vd: Ta có
+// file App.js
+<table>
+  <tr>
+    <Test />
+  </tr>
+</table>
+
+// file Test.js
+...
+return (
+  <div>
+    <td>AAAA</td>
+    <td>BBBB</td>
+  </div>
+)
+
+=> Kết quả ta có DOM:
+<table>
+  <tr>
+    <div>
+      <td>AAAA</td>
+      <td>BBBB</td>
+    </div>
+  </tr>
+</table>
+=> vấn đề xảy ra là xuất hiện thẻ <div> trong thẻ <table>
+điều này là không nên, vì vậy <React.Fragment> được sinh ra
+để giải quyết vấn đề này
+=> ở file Test.js ta sửa lại thẻ <div> thành <React.Fragment>
+...
+return (
+  <React.Fragment>    | <=> | <>
+    <td>AAAA</td>     | <=> |   <td>AAAA</td>
+    <td>BBBB</td>     | <=> |   <td>BBBB</td>
+  </React.Fragment>   | <=> | </>
+)
+
+=> để truyền attribute:
+ - Nên: <React.Fragment key={...}> ... </React.Fragment>
+ - Không nên: < key={...}> ... </> vì sẽ báo lỗi
+
+============================================================================
+## react-router-dom
+ - Sử dụng <Route exact path='/'>
+có thể hiểu 'exact' thường đi chung với 'path'
+nghĩa là: dẫn chính xác đến đường dẫn ...
+
+ - Sử dụng <Link>
+* Cở bản nhất:
+<Link to='/cart'>
+  <IconButton aria-label='Show cart items' color='inherit'>
+    <Badge badgeContent={totalItems} color='secondary'>
+      <ShoppingCart />
+    </Badge>
+  </IconButton>
+</Link>
+=> khi sử dụng cách này, nó có 1 nhược điểm là:
+thẻ <Link></Link> sẽ có định dạng như thẻ <a></a> của HTML
+=> vì thế ta phải style lại các elemet (ở vd này
+là <IconButton><Badge><ShoppingCart>) bên trong nó,
+trong khi các element đó ta đã được style trước khi đưa vào
+<Link></Link>, chẳng hạn: textDecoration: true, color: 'blue', ...v.v...
+=> Để khắc phục nhược điểm này ta sử dụng cách 2:
+
+* Cách 2: đưa component <Link> vào giá trị của thuộc tính của element
+<IconButton component={Link} to='/cart' aria-label='Show cart items' color='inherit'>
+  <Badge badgeContent={totalItems} color='secondary'>
+    <ShoppingCart />
+  </Badge>
+</IconButton>
+=> với cách 2 này ta vẫn giữ lại style của <IconButton>, <Badge> và <ShoppingCart>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
