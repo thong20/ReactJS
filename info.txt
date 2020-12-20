@@ -1,5 +1,13 @@
 Ecommerce Web App 01
 
+ecommerce là thư viện hổ trợ tạo giỏ hàng
+cho các ứng dụng
+
+stripe là 1 dịch vụ hổ trợ thanh toán cho
+các ứng dụng
+
+
+
 ## fetch Data
 - fetchProduct: 
 const fetchProduct = async () => {
