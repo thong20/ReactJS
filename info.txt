@@ -51,12 +51,12 @@ import {commerce} from 'commerce.js'
  
 - fetchProduct: 
 const fetchProduct = async () => {
-  const {data} = await commerce.products.list(); // trả về 1 Object
+  const {data} = await commerce.products.list(); // trả về 1 Object, nếu không sử dụng await thì sẽ trả về 1 Promise
   setProducts(data)
 }
 - fetchCart:
 const fetchCart = async () => {
-  const cart = await commerce.cart.retrieve(); // trả về 1 Object
+  const cart = await commerce.cart.retrieve(); // trả về 1 Object, nếu không sử dụng await thì sẽ trả về 1 Promise
   setCart(cart)
 }
 

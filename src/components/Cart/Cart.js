@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 import {Link} from 'react-router-dom'
 
@@ -10,7 +11,15 @@ import CartItem from './CartItem/CartItem'
  *  process const classes again
 */
 
-export default function Cart({cart}) {
+Cart.propTypes = {
+  cart: PropTypes.object, // passed from App.js parent
+  handleUpdateCartQty: PropTypes.func, // passed from App.js parent 
+  handleRemoveFromCart: PropTypes.func, // passed from App.js parent
+  handleEmptyCart: PropTypes.func, // passed from App.js parent
+            
+}
+
+export default function Cart({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}) {
   const classes = useStyles()
 
   const EmptyCart = () => (
@@ -28,7 +37,10 @@ export default function Cart({cart}) {
         {
           cart.line_items.map((item, index) => (
             <Grid item xs={12} sm={4} key={item.id}>
-              <CartItem item={item} />
+              <CartItem item={item}
+              onUpdateCartQty={handleUpdateCartQty}
+              onRemoveFromCart={handleRemoveFromCart}
+              />
             </Grid>
           ))
         }
@@ -44,6 +56,7 @@ export default function Cart({cart}) {
             type='button'
             variant='contained'
             color='secondary'
+            onClick={handleEmptyCart}
           >
             Empty Cart
           </Button>
