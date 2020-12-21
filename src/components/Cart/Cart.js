@@ -9,8 +9,7 @@ import CartItem from './CartItem/CartItem'
  *  process const classes again
 */
 
-export default function Cart(props) {
-  const { cart } = props
+export default function Cart({cart}) {
   const classes = useStyles()
 
   const EmptyCart = () => (

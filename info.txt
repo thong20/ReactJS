@@ -1,11 +1,39 @@
 Ecommerce Web App 01
 
-ecommerce là thư viện hổ trợ tạo giỏ hàng
+## ecommerce là thư viện hổ trợ tạo giỏ hàng
 cho các ứng dụng
 
-stripe là 1 dịch vụ hổ trợ thanh toán cho
+## stripe là 1 dịch vụ hổ trợ thanh toán cho
 các ứng dụng
 
+===== react-router-dom ===========================================
+- Cấu trúc 1:
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+<Router>
+  <Switch>
+    <Route exact path='/page-name-1'> 
+      // Component target here
+    </Route>
+    <Route exact path='/page-name-2'> 
+      // Component target here
+    </Route>
+  </Switch>
+</Router>
+
+- Cấu trúc 2: tương tự thẻ <a href='...'> của html
+import {Link} from 'react-router-dom'
+<div>
+  <Link to='/page-name'>Go to Detail</Link>
+</div>
+
+- Cấu trúc 3: với cấu trúc này thì ta vẫn giữ lại được
+các style của các element. So với cấu trúc 2, thì có
+lẻ ta phải style lại, vì đường link sẽ có text-decoration
+import {Typography} from '@material-ui/core'
+import {Link} from 'react-router-dom'
+<Typography component={Link} to='/page-name'>
+  Lorem ipsum ...
+</Typography>
 
 
 ## fetch Data
