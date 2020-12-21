@@ -5,7 +5,7 @@ import {useFormContext, Controller} from 'react-hook-form'
 export default function FormInput({name, label, required}) {
   const {control} = useFormContext()
   return (
-    <div>
+
       <Grid item xs={12} sm={6}>
         <Controller
           as={TextField}
@@ -16,6 +16,5 @@ export default function FormInput({name, label, required}) {
           required={required}
         />
       </Grid>
-    </div>
   )
 }
