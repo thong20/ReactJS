@@ -33,6 +33,12 @@ export default function App() {
     setCart(item.cart)
   }
 
+  const handleUpdateCartQty = async (productId, quantity) => {
+    const response = await commerce.cart.update(productId, {quantity});
+
+    setCart(cart)
+  }
+
   useEffect(() => {
     fetchProducts()
     fetchCart()
