@@ -29,14 +29,19 @@ import {Link} from 'react-router-dom'
 - Cấu trúc 3: với cấu trúc này thì ta vẫn giữ lại được
 các style của các element. So với cấu trúc 2, thì có
 lẻ ta phải style lại, vì đường link sẽ có text-decoration
-import {Typography} from '@material-ui/core'
+
 import {Link} from 'react-router-dom'
-<Typography component={Link} to='/page-name'>
-  Lorem ipsum ...
-</Typography>
+import {Typography, IconButton} from '@material-ui/core'
+
+<div>
+  <Typography component={Link} to='/page-name'>
+    Lorem ipsum ...
+  </Typography>
+  <IconButton component={Link} to='/page-name' />
+</div>
 
 
-## fetch Data
+===== fetch Data ==============================================
 - fetchProduct: 
 const fetchProduct = async () => {
   const {data} = await commerce.products.list(); // trả về 1 Object
