@@ -9,16 +9,21 @@ các ứng dụng
 ===== react-router-dom ===========================================
 - Cấu trúc 1:
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import PageName2 from './PageName2.js'
+
 <Router>
   <Switch>
     <Route exact path='/page-name-1'> 
       // Component target here
     </Route>
     <Route exact path='/page-name-2'> 
-      // Component target here
+      <PageName2 />
     </Route>
   </Switch>
 </Router>
+*** Giải thích: khi địa chỉ url khớp với giá trị của thuộc tính
+path, nó sẽ thực hiện đoạn code bên trong <Route> đó
+
 
 - Cấu trúc 2: tương tự thẻ <a href='...'> của html
 import {Link} from 'react-router-dom'
@@ -74,7 +79,7 @@ commerce.cart.update()
   - Thuộc tính:
 * flexGrow: 1
 
-* [theme.breakpoints.up('sm')]: {
+* [theme.breakpoints.up('sm')]: { // tương tự CSS responsive: @media (min-width:600px): 
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
   }

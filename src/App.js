@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 import { commerce } from './lib/commerce'
-import { Navbar, Products, Cart } from './components'
+import { Navbar, Products, Cart, Checkout } from './components'
 
-// 1:24:57
+// 1:58:50
 export default function App() {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({})
@@ -72,6 +72,9 @@ export default function App() {
               handleEmptyCart={handleEmptyCart}
             />
 
+          </Route>
+          <Route axact path='/checkout'>
+            <Checkout />
           </Route>
 
         </Switch>
