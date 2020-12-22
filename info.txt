@@ -82,6 +82,10 @@ commerce.checkout.getShippingOptions()
 commerce.services.localeListShippingCountries()
 commerce.services.localeListSubdivisions()
 
+===== STRIPE =============================================================
+import {Elements, CardElement, ElementsConsumer} from '@stripe/react-stripe-js'
+import {loadStrip} from '@stripe/react-stripe-js'
+
 
 
 ========================================================================

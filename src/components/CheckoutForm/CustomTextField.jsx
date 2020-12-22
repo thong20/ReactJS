@@ -1,8 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {TextField, Grid} from '@material-ui/core'
 import {useFormContext, Controller} from 'react-hook-form'
 
-export default function FormInput({name, label, required}) {
+FormInput.propTypes = {
+  name: PropTypes.string, // passed from AddressForm.js parent 
+  label: PropTypes.string, // passed from AddressForm.js parent 
+}
+
+export default function FormInput({name, label}) {
   const {control} = useFormContext()
   return (
 
@@ -13,7 +19,7 @@ export default function FormInput({name, label, required}) {
           fullWidth
           name={name}
           label={label}
-          required={required}
+          required
         />
       </Grid>
   )

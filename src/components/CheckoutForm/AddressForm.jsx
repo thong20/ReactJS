@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {InputLabel, Select, MenuItem, Button, Grid, Typography} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 import {useForm, FormProvider} from 'react-hook-form'
 
 import {commerce} from '../../lib/commerce'
@@ -8,9 +9,10 @@ import FormInput from './CustomTextField.jsx'
 
 AddressForm.propTypes = {
   checkoutToken: PropTypes.object, // passed from Checkout.js parent, it's token 
+  next: PropTypes.func, // passed from Checkout.js parent
 }
 
-export default function AddressForm({checkoutToken}) {
+export default function AddressForm({checkoutToken, next}) {
   const [shippingCountries, setShippingCountries] = useState([])
   const [shippingCountry, setShippingCountry] = useState('')
   const [shippingSubdivisions, setShippingSubdivisions] = useState([])
@@ -63,14 +65,14 @@ export default function AddressForm({checkoutToken}) {
     <>
       <Typography variant='h6' gutterBottom>Shipping Address</Typography>
       <FormProvider {...methods}>
-        <form onSubmit={() => {}}>
+        <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption}))}>
           <Grid container spacing={3}>
-            <FormInput required name='firstName' label='First name' />
-            <FormInput required name='lastName' label='Last name' />
-            <FormInput required name='address1' label='Address' />
-            <FormInput required name='email' label='Email' />
-            <FormInput required name='city' label='City' />
-            <FormInput required name='zip' label='ZIP / Postal code' />
+            <FormInput name='firstName' label='First name' />
+            <FormInput name='lastName' label='Last name' />
+            <FormInput name='address1' label='Address' />
+            <FormInput name='email' label='Email' />
+            <FormInput name='city' label='City' />
+            <FormInput name='zip' label='ZIP / Postal code' />
 
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
@@ -111,8 +113,14 @@ export default function AddressForm({checkoutToken}) {
                 }
               </Select>
             </Grid>
-
           </Grid>
+          
+          <br />
+
+          <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Button component={Link} to='/cart' variant='outlined'>Back to Cart</Button>
+            <Button type='submit' variant='contained' color='primary'>Next</Button>
+          </div>
         </form>
       </FormProvider>
     </>

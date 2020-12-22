@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core'
 import { ShoppingCart } from '@material-ui/icons'
@@ -10,8 +10,6 @@ import useStyles from './styles'
 
 // THONG20 ===================================================================
   import {showFullDate} from '../../features/uuid'
-  const uuid = showFullDate()
-  console.log(uuid)
 // THONG20 ====================================================================
 
 
@@ -20,8 +18,17 @@ Navbar.propTypes = {
 }
 
 export default function Navbar({ totalItems }) {
+  // THONG20 ===================================================================
+  const [uuid, setuuid] = useState('')   
+  setInterval(() => {
+    setuuid(showFullDate())
+  }, 1000)
+  // THONG20 ===================================================================
+
   const classes = useStyles();
   const location = useLocation();
+
+
 
   return (
     <>
