@@ -19,10 +19,10 @@ Navbar.propTypes = {
 
 export default function Navbar({ totalItems }) {
   // THONG20 ===================================================================
-  const [uuid, setuuid] = useState('')   
-  setInterval(() => {
-    setuuid(showFullDate())
-  }, 1000)
+  // const [uuid, setuuid] = useState('')   
+  // setInterval(() => {
+  //   setuuid(showFullDate())
+  // }, 1000)
   // THONG20 ===================================================================
 
   const classes = useStyles();
@@ -41,7 +41,7 @@ export default function Navbar({ totalItems }) {
           </Typography>
 
           {/* THONG20 ============================================================ */}
-            {uuid}
+            {/* {uuid} */}
           {/* THONG20 ============================================================ */}
           
           <div className={classes.grow} />

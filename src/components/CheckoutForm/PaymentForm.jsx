@@ -15,9 +15,10 @@ PaymentForm.propTypes = {
   nextStep: PropTypes.func, // passed from Checkout.js parent
 
   onCaptureCheckout: PropTypes.func, // passed from App.js => Checkout.js parent
+  timeout: PropTypes.func, // passed from Checkout.js parent
 }
 
-export default function PaymentForm({checkoutToken, shippingData, backStep, onCaptureCheckout, nextStep }) {
+export default function PaymentForm({checkoutToken, shippingData, backStep, onCaptureCheckout, nextStep, timeout }) {
   const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault()
 
@@ -46,6 +47,9 @@ export default function PaymentForm({checkoutToken, shippingData, backStep, onCa
         }
       }
       onCaptureCheckout(checkoutToken.id, orderData)
+
+      timeout()
+      
       nextStep()
     }
   }

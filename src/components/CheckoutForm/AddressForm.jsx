@@ -48,7 +48,6 @@ export default function AddressForm({checkoutToken, next}) {
     setShippingOption(options[0].id)
   }
 
-
   useEffect(() => {
     fetchShippingCountries(checkoutToken.id)
   }, [])
