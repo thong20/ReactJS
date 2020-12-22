@@ -74,7 +74,7 @@ export default function App() {
 
           </Route>
           <Route axact path='/checkout'>
-            <Checkout />
+            <Checkout cart={cart}/>
           </Route>
 
         </Switch>

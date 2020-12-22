@@ -74,6 +74,9 @@ commerce.cart.retrieve()
 commerce.cart.add()
 commerce.cart.update()
 
+- commerce.checkout
+commerce.checkout.generateToken()
+
 ========================================================================
 ## CSS:
   - Thuộc tính:
@@ -182,7 +185,9 @@ trong khi các element đó ta đã được style trước khi đưa vào
 </IconButton>
 => với cách 2 này ta vẫn giữ lại style của <IconButton>, <Badge> và <ShoppingCart>
 
-
+===== Kiến thức cũ =================================================
+Object.key(countries)
+Object.entries(shippingCountries)
 
 
 

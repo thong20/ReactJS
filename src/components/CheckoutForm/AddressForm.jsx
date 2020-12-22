@@ -1,12 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import PropTypes from 'prop-types'
 import {InputLabel, Select, MenuItem, Button, Grid, Typography} from '@material-ui/core'
 import {useForm, FormProvider} from 'react-hook-form'
 
 import {commerce} from '../../lib/commerce'
-
 import FormInput from './CustomTextField.jsx'
 
-export default function AddressForm() {
+AddressForm.propTypes = {
+  checkoutToken: PropTypes.object, // passed from Checkout.js parent, it's token 
+}
+
+
+export default function AddressForm({checkoutToken}) {
   const [shippingCountries, setShippingCountries] = useState([])
   const [shippingCountry, setShippingCountry] = useState('')
   const [shippingSubdivisions, setShippingSubdivisions] = useState([])
@@ -19,8 +24,14 @@ export default function AddressForm() {
   const fetchShippingCountries = async (checkoutTokenId) => {
     const {countries} = await commerce.services.localeListShippingCountries(checkoutTokenId)
 
+    console.log(countries)
     setShippingCountries(countries)
+    setShippingCountry(Object.keys(countries)[0])
   }
+
+  useEffect(() => {
+    fetchShippingCountries(checkoutToken.id)
+  }, [])
 
   return (
     <>
@@ -37,28 +48,32 @@ export default function AddressForm() {
 
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
-              <Select value={} fullWidth onChange={}>
-                <MenuItem key={} value={}>
+              <Select value={shippingCountry} fullWidth onChange={(e) => shippingCountry(e.tartget.value)}>
+                {
+                  Object.entries()
+                }
+                <MenuItem key={() => {}} value={() => {}}>
                   Select Me
                 </MenuItem>
               </Select>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Subdivision</InputLabel>
-              <Select value={} fullWidth onChange={}>
-                <MenuItem key={} value={}>
+              <Select value={() => {}} fullWidth onChange={() => {}}>
+                <MenuItem key={() => {}} value={() => {}}>
                   Select Me
                 </MenuItem>
               </Select>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid> */}
+            
+            {/* <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Options</InputLabel>
-              <Select value={} fullWidth onChange={}>
-                <MenuItem key={} value={}>
+              <Select value={() => {}} fullWidth onChange={() => {}}>
+                <MenuItem key={() => {}} value={() => {}}>
                   Select Me
                 </MenuItem>
               </Select>
-            </Grid>
+            </Grid> */}
 
           </Grid>
         </form>
