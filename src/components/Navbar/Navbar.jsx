@@ -8,6 +8,12 @@ import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/commerce.png'
 import useStyles from './styles'
 
+// THONG20 ===================================================================
+  import {showFullDate} from '../../features/uuid'
+  const uuid = showFullDate()
+  console.log(uuid)
+// THONG20 ====================================================================
+
 
 Navbar.propTypes = {
   totalItems: PropTypes.number, // passed from App.js parent
@@ -25,9 +31,12 @@ export default function Navbar({ totalItems }) {
           <Typography component={Link} to='/' variant='h6' className={classes.title} color='inherit'>
             <img src={logo} alt='Commerce.js' height='25px' className={classes.image} />
               Commerce.js
-            </Typography>
+          </Typography>
 
-
+          {/* THONG20 ============================================================ */}
+            {uuid}
+          {/* THONG20 ============================================================ */}
+          
           <div className={classes.grow} />
 
           {

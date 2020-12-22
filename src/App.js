@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { commerce } from './lib/commerce'
 import { Navbar, Products, Cart, Checkout } from './components'
 
-// 2:28:02
+// 2:34:16
 export default function App() {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({})
