@@ -76,6 +76,13 @@ commerce.cart.update()
 
 - commerce.checkout
 commerce.checkout.generateToken()
+commerce.checkout.getShippingOptions()
+
+- commerce.services
+commerce.services.localeListShippingCountries()
+commerce.services.localeListSubdivisions()
+
+
 
 ========================================================================
 ## CSS:
