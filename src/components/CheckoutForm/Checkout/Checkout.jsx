@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@material-ui/core'
 
 import {commerce} from '../../../lib/commerce'
@@ -6,10 +7,16 @@ import useStyle from './styles.js'
 import AddressForm from '../AddressForm'
 import PaymentForm from '../PaymentForm'
 
+
 const steps = ['shipping address', 'Payment details'];
 
-
-export default function Checkout({cart}) {
+Checkout.propTypes = {
+  cart: PropTypes.object, // passed from App.js parent
+  order: PropTypes.object , // passed from App.js parent
+  onCaptureCheckout: PropTypes.func , // passed from App.js parent
+  error: PropTypes.string , // passed from App.js parent
+}
+export default function Checkout({cart, order, onCaptureCheckout, error}) {
   const [activeStep, setActiveStep] = useState(0)
   const [checkoutToken, setCheckoutToken] = useState(null)
   const [shippingData, setShippingData] = useState({})
@@ -40,7 +47,7 @@ export default function Checkout({cart}) {
 
   const Form = () => activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken}/>
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} onCaptureCheckout={onCaptureCheckout}/>
 
   const Confirmation = () => (
     <div>Confirmation Component</div>

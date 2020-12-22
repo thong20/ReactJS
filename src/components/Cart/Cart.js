@@ -15,8 +15,7 @@ Cart.propTypes = {
   cart: PropTypes.object, // passed from App.js parent
   handleUpdateCartQty: PropTypes.func, // passed from App.js parent 
   handleRemoveFromCart: PropTypes.func, // passed from App.js parent
-  handleEmptyCart: PropTypes.func, // passed from App.js parent
-            
+  handleEmptyCart: PropTypes.func, // passed from App.js parent            
 }
 
 export default function Cart({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart}) {

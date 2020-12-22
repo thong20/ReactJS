@@ -73,10 +73,12 @@ commerce.products.
 commerce.cart.retrieve()
 commerce.cart.add()
 commerce.cart.update()
+commerce.cart.refresh()
 
 - commerce.checkout
 commerce.checkout.generateToken()
 commerce.checkout.getShippingOptions()
+commerce.checkout.capture()
 
 - commerce.services
 commerce.services.localeListShippingCountries()

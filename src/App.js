@@ -10,6 +10,8 @@ import { Navbar, Products, Cart, Checkout } from './components'
 export default function App() {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({})
+  const [order, setOrder] = useState({})
+  const [errorMessage, setErrorMessage] = useState('')
 
   const fetchProducts = async () => {
     // let response = await commerce.products.list(); // trả về 1 Object {data, meta}
@@ -51,6 +53,23 @@ export default function App() {
     setCart(cart)
   }
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh()
+
+    setCart(newCart)
+  }
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try{
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
+
+      setOrder(incomingOrder)
+      refreshCart()
+    }catch(err){
+      setErrorMessage(error.data.error.message)
+    }
+  }
+
   useEffect(() => {
     fetchProducts()
     fetchCart()
@@ -74,7 +93,11 @@ export default function App() {
 
           </Route>
           <Route axact path='/checkout'>
-            <Checkout cart={cart}/>
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}/>
           </Route>
 
         </Switch>
