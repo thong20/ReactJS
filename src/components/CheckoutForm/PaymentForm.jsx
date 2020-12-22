@@ -12,11 +12,12 @@ PaymentForm.propTypes = {
   shppingData: PropTypes.object, // passed from Checkout.js parent
   checkoutToken: PropTypes.object, // passed form Checkout.js parent, it's token 
   backStep: PropTypes.func, // passed form Checkout.js parent
+  nextStep: PropTypes.func, // passed from Checkout.js parent
 
   onCaptureCheckout: PropTypes.func, // passed from App.js => Checkout.js parent
 }
 
-export default function PaymentForm({checkoutToken, shippingData, backStep, onCaptureCheckout }) {
+export default function PaymentForm({checkoutToken, shippingData, backStep, onCaptureCheckout, nextStep }) {
   const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault()
 
@@ -43,8 +44,9 @@ export default function PaymentForm({checkoutToken, shippingData, backStep, onCa
           gateway: 'stripe',
           stripe: { payment_method_id: paymentMethod.id}
         }
-
       }
+      onCaptureCheckout(checkoutToken.id, orderData)
+      nextStep()
     }
   }
 

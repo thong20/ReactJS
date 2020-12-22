@@ -65,7 +65,7 @@ export default function App() {
 
       setOrder(incomingOrder)
       refreshCart()
-    }catch(err){
+    }catch(error){
       setErrorMessage(error.data.error.message)
     }
   }
