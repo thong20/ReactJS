@@ -1,5 +1,8 @@
 Ecommerce Web App 01
 
+===== BUILD PROJECT ==========================================================
+npm run build => Enter
+
 ## ecommerce là thư viện hổ trợ tạo giỏ hàng
 cho các ứng dụng
 
