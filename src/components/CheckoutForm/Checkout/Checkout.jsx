@@ -20,8 +20,6 @@ export default function Checkout({cart}) {
         // commerce.checkout.generateToken() nhận vào 2 tham số
         const token = await commerce.checkout.generateToken(cart.id, {type: 'cart'})
 
-        console.log(token)
-
         setCheckoutToken(token)
       }catch(error){
 
