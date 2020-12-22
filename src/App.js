@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { commerce } from './lib/commerce'
 import { Navbar, Products, Cart, Checkout } from './components'
 
-// 2:48:53
+// Link: https://www.youtube.com/watch?v=377AQ0y6LPA&t=4282s
+// 3:17:42
 export default function App() {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({})
