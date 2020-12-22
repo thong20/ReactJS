@@ -35,11 +35,12 @@ export default function Checkout({cart}) {
 
   const next = (data) => {
     setShippingData(data)
+    nextStep()
   }
 
   const Form = () => activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} />
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken}/>
 
   const Confirmation = () => (
     <div>Confirmation Component</div>

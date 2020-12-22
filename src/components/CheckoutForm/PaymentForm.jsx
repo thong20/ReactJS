@@ -8,12 +8,13 @@ import Review from './Review'
 
 PaymentForm.propTypes = {
   shppingData: PropTypes.object, // passed from Checkout.js parent
+  checkoutToken: PropTypes.object, // passed form Checkout.js parent, it's token 
 }
 
-export default function PaymentForm({shippingData}) {
+export default function PaymentForm({checkoutToken }) {
   return (
-    <div>
-      PaymentForm Component
-    </div>
+    <>
+      <Review checkoutToken={checkoutToken} />
+    </>
   )
 }
