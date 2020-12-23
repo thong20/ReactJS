@@ -19,3 +19,61 @@ vd:
 thì Grid item sẽ chiếm 4/12 cột, còn dưới dưới 'sm' là
 'xs' là từ 0px đến < 600px thì Grid item sẽ chiếm
 6/12 cột
+
+===== Canh giữa 1 component ===========================================================
+- Trong Grid:
+Để canh giữa 1 component trong <Grid item>, ta phải thêm
+prop 'container' cho Grid đó, sau đó mới có thể sử dụng:
+  - nếu sử dụng prop, thì có:
+    justify='center'
+    alignItems='center'
+  - nếu sử dụng CSS, thì có:
+    justifyContent: 'center',
+    alignItems: 'center'
+vd1:
+<Grid item xs container justify='center' alignItems='center'>
+  <Paper>item1</Paper>
+</Grid>
+vd2:
+<Grid item xs container style={{justifyContent: 'center', alignItems: 'center'}}>
+  <Paper>item1</Paper>
+</Grid>
+
+===== Canh giữa 1 hình ảnh ===========================================================
+- Để canh giữa 1 image, ta phải set:
+display là 'block' trước,
+sau đó là width và height là 100%
+Cuối cùng là set cho thằng cha chứa nó:
+justify/justifyContent và alignItems là 'center'
+là xong
+
+const useStyles = makeStyles({
+  img: {
+    display: 'block'
+    width/maxWidth: '100%',
+    height/maxHeight: '100%'
+  }
+})
+const classes = useStyles()
+
+<Grid item xs={4} container
+  style={{
+    background: "purple",
+    justifyContent: "center",
+    alignContent: "center"
+  }}
+>
+  <img
+    className={classes.img}
+    alt="complex"
+    src="https://v3.material-ui.com/static/images/grid/complex.jpg"
+  /> 
+</Grid>
+
+
+
+
+
+
+
+
