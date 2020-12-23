@@ -1,1 +1,18 @@
 App Voice Powered Expense Tracker
+===== Các thư viện ====================================
+downgrade react: npm i react@16.12.0 react-dom@16.12.0 => Enter
+Do có 1 số thư viện bên dưới không support react v17.x.x
+
+@material-ui/core
+@material-ui/icons
+@material-ui/lab
+@speechly/react-client
+@speechly/react-ui
+chart.js
+react-chartjs-2
+uuid
+
+
+
+
+
