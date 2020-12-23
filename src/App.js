@@ -5,7 +5,7 @@ import Details from './components/Details/Details'
 import useStyles from './styles'
 
 // https://youtu.be/NnUFOWR_V4Y
-// 20:57
+// 25:34
 export default function App() {
   const classes = useStyles();
   return (
