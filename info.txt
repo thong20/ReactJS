@@ -1,1 +1,21 @@
-ReactJS
+Lesson Material UI
+
+
+===== BREAKPOINT ================================================
+xs: >= 0px     - extra-small
+sm: >= 600px   - small
+md: >= 960px   - medium
+lg: >= 1280px  - large
+xl: >= 1920px  - extra-large
+
+vd:
+<Grid container>
+  <Grid item xs={6} sm={4}>
+    This is text here
+  </Grid>
+</Grid>
+
+=> Khi màn hình ở kích thước 'sm' là 600px trở lên
+thì Grid item sẽ chiếm 4/12 cột, còn dưới dưới 'sm' là
+'xs' là từ 0px đến < 600px thì Grid item sẽ chiếm
+6/12 cột
