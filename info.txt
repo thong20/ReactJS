@@ -12,6 +12,20 @@ chart.js
 react-chartjs-2
 uuid
 
+===== CSS =====================================================
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/money.png);
+}
+
+
+===== react-chartjs-2 =====================================================
+import { Doughnut } from 'react-chartjs-2'
+
+
+
+
+
+
 
 
 
