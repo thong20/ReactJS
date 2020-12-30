@@ -1,2 +1,83 @@
-ReactStrap
+React-bootstrap
+
+=== INSTALL ==============================
+version at time:
+- react-bootstrap: 1.4.0
+- bootstrap: 4.5.3
+
+npm install react-bootstrap bootstrap => Enter
+
+Sau đó chèn CSS vào file index.html:
+- từ CDN (recommend):
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+  crossorigin="anonymous"
+/>
+- import thư viện vaò trong file index.js hoặc App.js:
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+Ví dụ trong file index.js:
+
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import App from './App';
+
+  // Importing the Bootstrap CSS
+  import 'bootstrap/dist/css/bootstrap.min.css';
+
+  ReactDOM.render(<App />, document.getElementById('root'));
+
+Ví dụ trong file App.js:
+
+=== LAYOUT ====================================
+container: https://getbootstrap.com/docs/4.5/layout/overview/#containers
+
+xs: extra-small (default in bootstrap)
+sm: small       ~ >= 576px
+md: medium      ~ >= 768px
+lg: large       ~ >= 992px
+xl: extra-large ~ >= 1200px
+
+=== RESPONSIVE ==============================
+cú pháp:
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+hoặc:
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+vd:
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
+}
+
+=== Z-index ===============================
+$zindex-dropdown:          1000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-modal-backdrop:    1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+
+
+
 
