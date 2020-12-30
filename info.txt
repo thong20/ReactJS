@@ -68,7 +68,7 @@ vd:
     display: block;
   }
 }
-
+ 
 === Z-index ===============================
 $zindex-dropdown:          1000 !default;
 $zindex-sticky:            1020 !default;
