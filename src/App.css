@@ -3,3 +3,16 @@
   padding: 0px;
   box-sizing: border-box;
 } /* Reset CSS */
+
+._container{
+  border: 1px solid red;
+}
+.item{
+  display: flex;
+  border: 1px solid black;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+}
+
+
