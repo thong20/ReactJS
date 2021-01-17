@@ -1,1 +1,10 @@
 ReactJS
+
+=== LAYOUT ====================================
+container: https://getbootstrap.com/docs/4.5/layout/overview/#containers
+
+xs: extra-small (default in bootstrap)
+sm: small       ~ >= 576px
+md: medium      ~ >= 768px
+lg: large       ~ >= 992px
+xl: extra-large ~ >= 1200px
