@@ -1,13 +1,14 @@
 
 import './App.css';
+import {Provider} from 'react-redux'
+import store from './redux/store'
 import Form from './screens/Form'
 
 function App() {
   return (
-    <div className="App">
-      <h1>App Component</h1>
+    <Provider store={store}>
       <Form />
-    </div>
+    </Provider>
   );
 }
 

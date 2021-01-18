@@ -5,4 +5,13 @@
 }
 .myCell{
   border: 1px solid red;
+  /* padding-left: 20;
+  padding-right: 20; */
 }
+.border {
+  border: 3px solid green;
+}
+.item {
+  margin-left: 10%;
+}
+

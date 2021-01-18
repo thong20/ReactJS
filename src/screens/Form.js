@@ -1,55 +1,80 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState } from "react";
+import {connect} from 'react-redux'
+import {actionAddItem, actionAddTodo} from '../redux/actions'
+import store from '../redux/store'
+
 import PropTypes from "prop-types";
 import {
-  Button,
-  Form,
-  FormGroup,
-  FormText,
-  Label,
-  Input,
-  Container,
-  Row,
-  Col,
+  Button, Form, FormGroup, Input,
+  Container, Row, Col,
 } from "reactstrap";
 
-TodoApp.propTypes = {
-  // name_prop: PropTypes.type
-  todos: PropTypes.func, // passed from to binding/TodoApp.js
-  addTodo: PropTypes.func, // passed from to binding/TodoApp.js
-};
+const consoleLog = n => console.log('=== FormScreen.js - line: ' + n + ' ================================')
 
-function TodoApp(props) {
+FormScreen.propTypes = {
+  // name_prop: PropTypes.type
+  // item: PropTypes.array, // passed from to redux/connect.js thông qua Redux
+  // actionAddItem: PropTypes.func, // passed from to redux/connect.js thông qua Redux
+}; 
+
+function FormScreen(props) {
+  const {rootReducerList, actionAddItem} = props
   const [text, setText] = useState("");
+
+  
+
+  const addItem = (str) => {
+    actionAddItem(str)
+  }
+
   return (
-    <Container className='myCell'>
-      <Row>
+    <Container>
+      <h1>Redux & react-redux</h1>
+      <Row> 
         <Form>
-          <FormGroup row>
-            <Label for="exampleEmail" sm={2}>
-              Email
-            </Label>
-            <Col sm={10}>
+          <FormGroup row >
+            <Col />
+            <Col xs={6}>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="with a placeholder"
+                type="text"
+                name="todo"
+                id="todo"
+                value={text}
+                placeholder="Type todo"
+                onChange={(str) => setText(str.target.value)}
               />
             </Col>
-          </FormGroup>
-          <FormGroup check row>
-            <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+            <Col>
+              <Button color="primary" onClick={() => {
+                addItem(text)
+                setText('')
+              }}>Submit</Button>
             </Col>
+            <Col />
           </FormGroup>
+          
         </Form>
       </Row>
-      <Row ></Row>
-      <Row>
-        <p>lakjsdlfjalsdkjflkjlkj</p>
-      </Row>
+      {
+        rootReducerList.map((item, idx) => (
+          <Row key={`${idx}`}><p className='item'>{item}</p></Row>
+        ))
+      }
     </Container>
   );
 }
 
-export default TodoApp;
+const mapStateToProp = (state) => {
+  console.log('state:', state)
+  return state
+}
+
+console.log('store.getState:', store.getState())
+
+export default connect(mapStateToProp, {actionAddItem: actionAddItem})(FormScreen)
+
+
+
+
