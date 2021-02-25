@@ -1,0 +1,54 @@
+@import './styles/_about.scss';
+@import './styles/_blogs.scss';
+@import './styles/_contact.scss';
+@import './styles/_layout.scss';
+@import './styles/_typography.scss';
+@import './styles/_navbar.scss';
+@import './styles/_skill.scss';
+@import './styles/_portfolios.scss';
+@import './styles/_services.scss';
+@import './styles/_title.scss';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #0056d898;
+    border-radius: 50px;
+}
+body::-webkit-scrollbar-track{
+    background-color: #777;
+}
+
+body{
+    color: #a4acc4;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.2rem;
+}
+span{
+    color: #037FFF;
+}
+
+@media screen and (max-width: 411px){
+    html{
+        font-size: 70%;
+    }
+}
+@media screen and (max-width: 700px){
+    html{
+        font-size: 90%;
+    }
+}
+@media screen and (max-width: 480px){
+    h2{
+        font-size: 70%;
+    }
+    h3{
+        font-size: 70%;
+    }
+}

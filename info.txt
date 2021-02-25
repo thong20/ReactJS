@@ -1,1 +1,149 @@
 ReactJS
+theme.color:
+  --bg: #10121B;
+  --sidebar: #191D2B;
+  --main-blue-color: #037FFF;
+  --main-border-color: #2E344E;
+  --font-color: #a4acc4;
+
+
+Các thư viện:
+npm install
+  @fortawesome/fontawesome-svg-core
+  @fortawesome/free-brands-svg-icons
+  @fortawesome/free-solid-svg-icons
+  @fortawesome/react-fontawesome
+
+VS CODE EXTENSTIONS:
+  1) Atom One Dark Theme
+  2) Indent Rainbow
+  3) JS JSX Snippets
+  4) Live Sass Compiler
+  5) Mithril Emmet
+  6) Styled-Components-Snippets
+  7) VsCode Icons
+  8) Live Server
+  9) JavaScript (ES6) Code Snippets
+  10) ES7 React/Redux/GraphQL/React-Native Snippets
+  11) SASS
+  12) Vs-Code-Styled-Componets
+  13) HTML CSS Support
+  14) Javascript and Typescript Nightly
+  15)  IntelliSense for CSS class names in HTML
+  16)  Python
+
+==============================================================
+
+Nhúng font google
+Copy đoạn code trong trường "Use on the web" ở mục Link
+
+
+=======================================================
+các thuộc tính của "transition"
+cú pháp:
+transition: property duration timing-function delay
+vd:
+p:hover{
+  width: 100%
+}
+p{
+  width: 15%;
+  transition: width 2s ease-in-out 5s;
+  /* hoặc: */
+  transition: 2s width 5s ease-in-out;
+}
+
+* Chú ý: Khi có hai đơn vị thời gian, thì
+đơn vị đứng trước sẽ là "duration" còn lại là "delay"
+
+
+==================================================
+CSS grid
+
+display: grid;
+
+các thuộc tính thường dùng:
+grid-template-columns
+grid-gap
+grid-column-gap
+grid-row-gap
+
+===================================================
+style cho thẻ img nên dùng:
+
+width
+height
+object-fit: cover;
+
+==================================================
+kiến thức mới về CSS:
+  object-fit: cover
+  grid-template-columns: repeat(2, 1fr);
+
+  transform-origin: left
+  transform-origin: center
+
+  height: calc(100% - 30px);
+
+  visibility: hidden;
+
+  pointer-events: none
+
+  body::-webkit-scrollbar
+  body::-webkit-scrollbar-thumb
+  body::-webkit-scrollbar-track
+
+  &:hover::berfore{ }
+  &:hover{
+    .hover-item{ }
+  }
+  &:not(:last-child){ }
+
+  &:focus{ }
+  &:active{ }
+
+============================================
+Set() trong JavaScript
+
+
+============================================
+Thủ thuật Emmet
+cúa pháp:
+.lines-$*3 => Tab
+
+=> Sẽ tạo ra 3 thẻ <div> có className là "lines-1" "lines-2" "lines-3"
+<div className="lines-1"></div>
+<div className="lines-2"></div>
+<div className="lines-3"></div>
+
+
+=============================================
+Tóm lại:
+- Phân cột cho các Element:
+Khi phân cột cho các Element ta nên sử dụng
+grid và grid-template-columns, vd:
+  2 cột:
+    grid-template-columns: repeat(2, 1fr)
+  1 cột:
+    grid-template-columns: repeat(1, 1fr)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
