@@ -1,0 +1,52 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.container {
+  border: 3px solid #ccc;
+  width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  width: 2200px;
+  transition: transform 0.7s ease-in-out;
+  /* display: none; */
+}
+.item {
+  width: 400px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+#item1 {
+  background-color: green;
+}
+#item2 {
+  background-color: blue;
+}
+#item3 {
+  background-color: yellow;
+}
+#item4 {
+  background-color: purple;
+}
+#item5 {
+  background-color: coral;
+}
+
+.gButton {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  padding: 0.4rem 2rem;
+  font-size: 2rem;
+  border-radius: 6px;
+  border-width: 3px;
+  border-color: #ccc;
+}
