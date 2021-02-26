@@ -12,11 +12,12 @@ const images = [
   'https://images.unsplash.com/photo-1613550181063-21d8038f4807?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
 ]
 
-
+// link: https://youtu.be/huVJW23JHKQ
 function App() {
 
   useEffect(() => {
     const faders = document.querySelectorAll('.fade-in')
+    const sliders = document.querySelectorAll('.slide-in')
   
     const appearOptions = {
       // threshold là đường biên kích hoạt trên đối tượng fade-in khớp với rootMargin
@@ -46,6 +47,9 @@ function App() {
     
     faders.forEach(fader => {
       appearOnScroll.observe(fader) // bắt đầu theo dõi các fader
+    })
+    sliders.forEach(slider => {
+      appearOnScroll.observe(slider)
     })
   })
 
@@ -85,18 +89,42 @@ function App() {
 
       <div className="section">
         <div className="article">
-          <img src={images[1]} alt=""/>
-          <div className="text">
+          <img className='from-left slide-in' src={images[1]} alt=""/>
+          <div className="text from-right slide-in">
             <p>
-            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
             </p>
           </div>
         </div>
         <div className="article">
-          <img src={images[2]} alt=""/>
-          <div className="text">
+          <img className='from-left slide-in' src={images[2]} alt=""/>
+          <div className="text from-right slide-in">
             <p>
-            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </div>
+        <div className="article">
+          <img className='from-left slide-in' src={images[3]} alt=""/>
+          <div className="text from-right slide-in">
+            <p>
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </div>
+        <div className="article">
+          <img className='from-left slide-in' src={images[4]} alt=""/>
+          <div className="text from-right slide-in">
+            <p>
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </div>
+        <div className="article">
+          <img className='from-left slide-in' src={images[5]} alt=""/>
+          <div className="text from-right slide-in">
+            <p>
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
             </p>
           </div>
         </div>
