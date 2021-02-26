@@ -82,6 +82,25 @@ function App() {
           </p>
         </div>
       </div>
+
+      <div className="section">
+        <div className="article">
+          <img src={images[1]} alt=""/>
+          <div className="text">
+            <p>
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </div>
+        <div className="article">
+          <img src={images[2]} alt=""/>
+          <div className="text">
+            <p>
+            Lorem Ipsum is simply dummy sjflkdjs pajlsdjf la text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="footer">
 
       </div>

@@ -23,15 +23,6 @@
   display: flex;
   align-items: center;
 }
-/* .gap{
-  position: fixed;
-  top: 400px;
-  left: 0;
-  width: 100px;
-  height: 2px;
-  background-color: tomato;
-  z-index: 
-} */
 
 .columns{
   display: flex;
@@ -50,6 +41,24 @@
 .fade-in.appear{
   opacity: 1;
 }
+
+.section{
+  border: 1px solid red;
+  width: 80%;
+  margin: 1rem auto 0 auto;
+
+}
+.section .article{
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.section .article img{
+  width: 100px;
+}
+
+
+
 
 .footer{
   width: 100%;
