@@ -1,0 +1,71 @@
+$timeEffect: .2s;
+
+@mixin myTransitionCubicbezier ($time){
+  transition: all $time cubic-bezier(.12,-1.03,.76,1.71);
+}
+
+.Menu01{
+  border: 1px solid white;
+  width: 200px;
+  height: 200px;
+  margin: 3rem auto;
+  display: flex;
+  
+  // HOVER ================================
+  &:hover{
+    cursor: pointer;
+    .menu{
+      .middle{
+        opacity: 0;
+      }
+      &::before, &::after{
+        background-color: red;
+      }
+      &::before{
+        transform: rotate(135deg);
+        top: 0
+      }
+      &::after{
+        transform: rotate(-135deg);
+        top: 0
+      }
+      
+    }
+  }
+
+  .menu{
+    margin: auto;
+    position: relative;
+    .middle{
+      display: inline-block;
+      width: 100px;
+      height: 15px;
+      background-color: yellow;
+      border-radius: 15px;
+
+      transition: all $timeEffect ease-in-out;
+    }
+
+    &::before, &::after{ // common property
+      content: '';
+      width: 100px;
+      height: 15px;
+      border-radius: 15px;
+      left: 0;
+
+      @include myTransitionCubicbezier($timeEffect)
+
+    }
+    &::before{
+      background-color: white;
+      position: absolute;
+      top: -30px;
+    }
+    &::after{
+      background-color: green;
+      position: absolute;
+      top: calc(30px);
+    }
+  }
+}
+
