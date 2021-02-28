@@ -1,1 +1,71 @@
-ReactJS
+axios
+
+
+let cancel;
+axios({
+  method: 'GET',
+  url: 'http://......',
+  params: {q: query, page},
+  cancelToken: axios.CancelToken(c => cancel = c)
+}).then(res => {
+  console.log(res.data)
+}).catch(e => console.log(e))
+
+
+method:
+  .CancelToken(c => { })
+  .isCancel(e => { })
+
+
+=====================================
+useCallback Hooks
+
+
+======================================
+useRef có method .disconnect()
+
+
+======================================
+thuật toán:
+- Bước 1: Xác định item cuối cùng của Mảng, sau đó đưa vào useCallback Hooks thông qua thuộc tính ref
+code:
+...
+const lastBookElementRef = useCallback(node => {console.log('last element:', node)})
+...
+return(
+  ...
+  {
+    {books.map((book, index) => {
+      if (books.length === index + 1) {
+        return (
+          <div ref={lastBookElementRef} key={`${index}`}>
+            {book}
+          </div>
+        );
+      }
+      return <div key={`${book}`}>{book}</div>;
+    })}
+  }
+  ...
+)
+
+- Bước 2: observe element này
+
+...
+const observer = useRef();
+const lastBookElementRef = useCallback(
+  (node) => {
+    if (loading) return;
+    if (observer.current) observer.current.disconnect(); // .disconnect() là method của IntersectionObserver
+    observer.current = new IntersectionObserver((entries) => { // gán useRef là 1 IntersectionObserver
+      if (entries[0].isIntersecting) {
+        console.log("Visible");
+      }
+    });
+    if (node) observer.current.observe(node); // .observe() là method của IntersectionObserver 
+    console.log("node:", node);
+  },
+  [loading, hasMore]
+);
+...
+
