@@ -2,10 +2,13 @@ import React from 'react'
 import './header.scss'
 import PropTypes from 'prop-types'
 
+import Navbar from '../Navbar/Navbar'
+
 export default function Header(){
   return (
     <div id='Header'>
-      <p className='menuMobile'>Menu</p>
+      <Navbar />
+      
     </div>
   )
 }
