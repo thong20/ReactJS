@@ -1,5 +1,49 @@
-.Footer{
-  h1{
-    color: red
+@use '../../AppTheme' as theme;
+
+#Footer{
+  .container{
+    height: 20vh;
+    
+    padding: 0 2rem;
+    background-color: theme.$colorBgDark;
+    .copyright{
+      color: theme.$colorFontGray;
+      text-transform: uppercase;
+    }
+    .social{
+      // App.scss
+    }
+  }
+
+  // PHONE LANDSCAPE to up
+  @media screen and (min-width: theme.$phonePortrait) {
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 627px) {
+    .copyright{
+      width: 250px;
+      text-align: center;
+    }
+  }
+
+  // PHONE PORTRAIT
+  @media screen and (max-width: theme.$phonePortrait) {
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // grid-row-gap: 1rem;
+        .copyright{
+          margin-bottom: .4rem;
+        }
+        .social{
+          margin-top: .4rem;
+        }
+    }
   }
 }

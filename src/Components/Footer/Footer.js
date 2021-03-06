@@ -4,8 +4,20 @@ import PropTypes from 'prop-types'
 
 export default function Footer(){
   return (
-    <div className='Footer'>
-      <h1>Footer Component</h1>
+    <div id='Footer'>
+      <div className="container">
+        <div className="copyright">
+          <p>2021. Clone by minhphong1515@gmail.com</p>
+        </div>
+        <div className="social">
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-github"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,66 @@
+@use './AppTheme' as theme;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  font-size: 14px;
+  font-family: 'IBM Plex Sans', 'M PLUS Rounded 1c', sans-serif;
+  color: theme.$colorFontLight;
+  background-color: theme.$colorBgGray1;
+}
+
+a{
+  text-decoration: none;
+  color: theme.$colorFontLight;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.space{
+  height: 6rem;
+}
+
+.row{
+  // border: 1px solid yellow;
+  width: 80%;
+  margin: auto;
+  .title{
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+}
+
+.social{
+  display: grid;
+  grid-template-columns: repeat(6, 1.5rem);
+  grid-gap: 1rem;
+  font-size: 1.3rem;
+  & > i{
+    color: theme.$colorFontGray;
+    &:hover{
+      color: theme.$colorBgPrimary
+    }
+  };
+}
+
+.button-icon{
+  padding: 1rem 1rem;
+  background-color: #00000000;
+  text-transform: uppercase;
+  border: 1px solid theme.$colorFontLight;
+  cursor: pointer;
+  color: theme.$colorFontLight;
+  i{ margin-left: .3rem;}
+  @media screen and (min-width: theme.$phoneLandscape) {
+    padding: 1rem 1.5rem
+  }
+  @media screen and (min-width: theme.$desktop) {
+    padding: 1rem 2rem
+  }
+
 }

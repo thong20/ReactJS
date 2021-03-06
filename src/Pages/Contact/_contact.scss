@@ -1,0 +1,173 @@
+@use '../../AppTheme' as theme;
+
+#Contact{
+  .container{
+    .row{
+    
+      .title{
+        text-align: center;
+      }
+
+      // FORM --------------------------------
+      .form{
+        width: 60%;
+        margin: 0 auto;
+        form{
+          display: grid;
+          grid-row-gap: 3rem;
+          margin-top: 2rem;
+        }
+        .row-form{
+          display: flex;
+          // border: 1px solid yellow; // TEST
+          position: relative;
+          // grid-row-gap: 1rem;
+          label{
+            text-transform: uppercase;
+            color: theme.$colorFontGray;
+            position: absolute;
+            top: -1.5rem;
+            left: 0;
+            order: -1;
+            transform: translateY(120%);
+            transition: transform .4s ease-in-out;
+            
+          }
+          
+          .has-content{
+            transform: translateY(0%);
+            transition: transform .4s ease-in-out;
+            
+          }
+
+          input{
+            background: none;
+            border: none;
+            border-bottom: 1px solid theme.$colorFontGray;
+            color: theme.$colorFontGray;
+            padding-bottom: .8rem;
+            outline: none;
+            width: 100%;
+
+            //handle autofill
+            &:-webkit-autofill,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active,
+            &:-webkit-autofill:hover{
+              border-bottom: 1px solid theme.$colorFontGray;
+              -webkit-box-shadow: 0 0 0px 100px theme.$colorBgGray1 inset;
+              -webkit-text-fill-color: theme.$colorFontGray;
+            }
+            &:hover{cursor: pointer;}
+            &:focus + label{
+              transform: translateY(0%);
+            }
+
+            
+          }
+          
+        }
+        .g-name{
+          display: grid;
+          grid-row-gap: 3rem;
+          
+          // Landscape
+          @media screen and (min-width: theme.$phoneLandscape){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1rem;
+          }
+        }
+        .btn-submit{
+          text-align: center;
+          input{
+            border: 1px solid theme.$colorFontLight;
+            background-color: transparent;
+            color: theme.$colorFontLight;
+            font-size: .8rem;
+            text-transform: uppercase;
+            padding: .8rem 1rem;
+            @media screen and (min-width: theme.$tablet) {
+              
+            }
+  
+            @media screen and (min-width: theme.$desktop) {
+              padding: 1rem 2rem;
+              font-size: 1rem;
+            }
+          }
+
+        }
+      }
+    }
+
+    // ENQUIRY -----------------------------
+    .enquiry{
+      padding: 3rem 0;
+      background-color: theme.$colorBgGray2;
+      .col-2{
+        
+
+        .col-left{
+          display: grid;
+          grid-row-gap: 2rem;
+          .project-enquiry{
+            display: grid;
+            text-align: center;
+          }
+          .support-enquiry{
+            display: grid;
+            text-align: center;
+            // margin-top: 2rem;
+          }
+
+          .project-enquiry span:first-child,
+          .support-enquiry span:first-child{
+            color: theme.$colorFontLight;
+            font-size: 1.5rem;
+          }
+          .project-enquiry span:last-child,
+          .support-enquiry span:last-child{
+            color: theme.$colorFontGray;
+            font-size: 1rem;
+            margin-top: 1rem;
+          }
+
+          @media screen and (min-width: theme.$tablet) {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1rem;
+          }
+          
+        }
+      
+        .col-right{
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+          justify-content: center;
+          align-items: center;
+          span{
+            display: inline-block;
+            font-size: 1.5rem;
+          }
+          .social{
+            text-align: center;
+            margin-top: 1rem;
+          }
+        }
+        @media screen and (min-width: theme.$desktop) {
+          display: grid;
+          grid-template-columns: 1fr 33%;
+          grid-column-gap: 1rem;
+          .col-right{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .map{
+      width: 100%;
+    }
+  }
+}

@@ -2,13 +2,13 @@ import React from 'react'
 import './home.scss'
 import PropTypes from 'prop-types'
 
-import Header from '../../Components/Header/Header'
+import Banner from '../../Components/Banner/Banner'
 
+import image from '../../images/service.jpg'
 export default function Home(){
   return (
     <div id='Home'>
-      <Header />
-      <h1>Home Component</h1>
+      <Banner src={image}/>
     </div>
   )
 }

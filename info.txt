@@ -14,8 +14,10 @@ Bước 2: viết menu
   Sử dụng thẻ <nav>...</nav> bọc toàn bộ menu
 
 
-
-
+TODO:
+[ ] pagination: About Page
+[ ] Animated Navbar when scroll
+[ ] Lazy loading
 
 
 

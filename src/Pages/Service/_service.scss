@@ -1,0 +1,105 @@
+@use '../../AppTheme' as theme;
+
+// MOBILE FIRST
+#Service{
+  .servcie-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+    
+    .card{
+      border: 1px solid theme.$colorFontGray; // TEST
+      padding: 2rem;
+      i:first-child{
+        font-size: 3rem;
+      }
+      p:nth-child(2){
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+      p:last-child{
+        color: theme.$colorFontGray;
+      }
+    }
+  }
+  
+  .order{
+    background-color: theme.$colorBgGray2;
+    
+    .col2{
+      padding: 3rem 0;
+      .col-left{
+        
+        img{
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+      }
+      .col-right{
+        margin-top: 1rem;
+        .block{
+          margin-top: 2rem;
+          text-align: center;
+          p{
+            font-size: 1.8rem;
+          }
+          .button-icon{
+            // style in App.scss
+            margin-top: 2rem;
+          }
+          // Landscape
+          @media screen and (min-width: theme.$phoneLandscape) {
+            margin-top: 0;
+            p{ font-size: 2rem;}
+          }
+          // Desktop
+          @media screen and (min-width: theme.$desktop) {
+            p{ font-size: 3rem;}
+          }
+
+        }
+        
+      }
+      
+    }
+  }
+  
+  // Landscape 
+  @media screen and (min-width: theme.$phoneLandscape) {
+    .servcie-card{
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 3rem;
+      grid-row-gap: 3rem;
+    }
+    .order{
+      .col2{
+        position: relative;
+        .col-left{
+          position: relative;
+          img{
+            width: 55%;
+            transform: translateX(80%);
+          }
+          
+        }
+        .col-right{
+          width: 40%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  // Desktop to up
+  @media screen and (min-width: theme.$desktop){
+    .servcie-card{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 5rem;
+      grid-row-gap: 5rem;
+    }
+  }
+
+}

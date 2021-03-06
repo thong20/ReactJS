@@ -1,5 +1,281 @@
-.About{
-  h1{
-    color: red;
+@use '../../AppTheme' as theme;
+
+#About{
+  .container{
+    .banner{
+    }
+    .content{
+        
+      // ABOUT ME ===========================
+      .about-me{
+        display: grid;
+        .col-right{
+          .desc1{
+            font-size: 1.1rem;
+            color: theme.$colorFontLight;
+            letter-spacing: 1.2px;
+            line-height: 2rem;
+          }
+          .desc2{
+            font-size: 1rem;
+            color: theme.$colorFontGray;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+            line-height: 1.8rem;
+
+          }
+          .btn-download{
+            margin-top: 2rem;
+            
+            p{
+              display: inline-block;
+              border: 1px solid red;
+              font-size: 1.2rem;
+              padding: 1rem 1.5rem;
+              text-transform: uppercase;
+              background-color: theme.$colorBgPrimary;
+            }
+          }
+        }
+      }
+      
+      // SKILL =========================
+      .skills{
+        display: grid;
+        grid-column-gap: 1rem;
+        margin-top: 2rem;
+        .skill-name{
+          margin-top: 1rem;
+          span{
+            text-transform: uppercase;
+            color: theme.$colorFontGray;
+          }
+          .progress-wrap{
+            display: flex;
+            align-items: center;
+            .progress{
+              width: 90%;
+              border: 1px solid red;
+              margin-right: 1rem;
+              height: .5rem;
+              border-radius: .5rem;
+              padding: 1px;
+              .progress-value{
+                background-color: theme.$colorBgPrimary;
+                height: 100%;
+                border-radius: .4rem;
+              }
+            }
+          }
+        }
+      }
+      
+      // EDUCATION - EXPERIENCE ===================
+      .col2{
+        .experience{
+          margin-top: 1.5rem;
+        }
+        .title{
+          margin-bottom: 2rem;
+        }
+        .timeline{
+          border-left: 1px solid theme.$colorFontGray; // TEST
+          padding:  4rem 0 4rem 4rem;
+          position: relative;
+          
+          p:first-child{
+            border: 1px solid red;
+            padding: .6rem 1rem;
+            display: inline-block;
+          }
+          p:nth-child(2){
+            margin: .6rem 0;
+            font-size: 1.2rem;
+            span{
+              font-size: 1rem;
+              font-weight: 100;
+              letter-spacing: 1px;
+              // color: red;
+            }
+          }
+          p:last-child{
+            color: theme.$colorFontGray;
+          }
+
+          p::before{
+            content: '';
+            display: inline-block;
+            width: .6rem;
+            height: .6rem;
+            border-radius: 100%;
+            background-color: theme.$colorBgPrimary;
+            position: absolute;
+            top: 50%;
+            left: -.6rem;
+            border: .3rem solid theme.$colorBgGray1;
+          }
+        }
+      }
+
+      // STATISTICS ============================
+      .statistics{
+        background-color: theme.$colorBgGray2;
+        display: grid;
+        grid-row-gap: 3rem;
+        padding: 3rem 0;
+        .item{
+          text-align: center;
+          margin: 1rem 0;
+          p{
+            color: theme.$colorBgPrimary;
+            font-size: 2rem;
+            font-weight: 300;
+          }
+          .divide{
+            margin: 2rem auto;
+            height: 2px;
+            width: 2rem;
+            background-color: theme.$colorFontGray;
+
+          }
+          span{
+            color: theme.$colorFontLight;
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
+        }
+        // Landscape
+        @media screen and (min-width: theme.$phoneLandscape) {
+          grid-template-columns: 1fr 1fr;
+          grid-row-gap: 1rem;
+          .item{
+            // padding: 2rem 0;
+          }
+        }
+        @media screen and (min-width: theme.$tablet) {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          .item{
+            // padding: 3rem 0;
+          }
+        }
+      }
+
+      // TESTIMONIALS ==========================
+      .testimonials{
+        .row{
+        }
+        .column{
+          display: grid;
+          grid-row-gap: 6rem;
+          .post{
+            display: grid;
+            grid-row-gap: 1rem;
+            text-align: center;
+            @media screen and (min-width: theme.$phoneLandscape){
+              grid-template-columns: 30% 1fr;
+            }
+            .profile{
+              .avatar{
+                width: 7rem;
+                margin: 0 auto;
+                img{
+                  width: 100%;
+                  clip-path: circle(50% at center)
+                }
+              }
+              p:nth-child(2){
+                color: theme.$colorFontGray;
+                text-transform: uppercase;
+                margin: .5rem;
+              }
+              p:last-child{
+                color: theme.$colorFontLight;
+                font-weight: 300;
+              }
+            }
+            .text{
+              color: theme.$colorFontGray;
+              text-align: justify;
+            }
+          }
+        }
+      }
+
+      // CONTACT ME ============================
+      .contact-me{
+        background-color: theme.$colorBgGray2;
+        .col-2{
+          padding: 3rem 0;
+          display: grid;
+          grid-row-gap: 3rem;
+          text-align: center;
+          @media screen and (min-width: theme.$tablet) {
+            grid-template-columns: 1fr 1fr;
+          }
+          .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          p{
+            font-size: 2rem;
+          }
+
+
+        }
+      }
+    }
   }
+
+
+
+  
+  
+  // Portrait
+  @media screen and (max-width: theme.$phonePortrait) {
+    .skills{
+      grid-template-columns: 1fr;
+      .progress-wrap{
+        width: 100%
+      }
+    }
+    .about-me{
+      grid-template-columns: 1fr;
+
+      .desc1{
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  // Landscape
+  @media screen and (min-width: theme.$phoneLandscape) {
+    .about-me{
+      grid-template-columns: 30% 1fr;
+    }
+    .col2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+      .experience{
+        margin-top: 0 !important;
+      }
+    }
+  }
+  // Tablet
+  @media screen and (min-width: theme.$tablet){
+    .skills{
+      grid-template-columns: 1fr 1fr;
+    }
+    .col2{
+      grid-column-gap: 2rem;
+    }
+  }
+  // Desktop 
+  @media screen and (min-width: theme.$desktop){
+    .skills{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
 }
