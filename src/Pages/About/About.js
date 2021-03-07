@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './about.scss'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
@@ -57,7 +57,12 @@ const skills = [
   {name: 'jQuery', skill: 72},
   {name: 'Node JS', skill: 70},
 ]
-
+const statistics = [
+  {count: 72, name: 'Happy Clients'},
+  {count: 136, name: 'Projects'},
+  {count: 27, name: 'Awards'},
+  {count: 2988, name: 'Followers'}
+]
 const customers = [
   {
     name: 'Cecilia Obotoh',
@@ -81,6 +86,33 @@ const customers = [
 export default function About(){
 
 
+  const lazyLoading = () => {
+    const faders = document.querySelectorAll(".fade-in")
+    console.log('faders:', faders)
+    const options = {
+      rootMargin: '0px 0px -200px 0px',
+      threshold: 1
+    }
+    const observer = new IntersectionObserver((entries, appearOnscroll) => {
+      entries.forEach(obj => {
+        if(!obj.isIntersecting){
+          return
+        }else{
+          obj.target.classList.add('appear')
+          appearOnscroll.unobserve(obj.target)
+        }
+      })
+    }, options)
+  
+    faders.forEach(fader => observer.observe(fader))
+
+  }
+
+  useEffect(() => {
+    lazyLoading()
+    
+  }, [])
+
   return (
     <div id='About'>
       <div className="container">
@@ -92,16 +124,16 @@ export default function About(){
             <div className="col-left">
               <h3 className='title'>About me</h3>
             </div>
-            <div className="col-right">
+            <div className="col-right fade-in">
               <div className="desc1">
                 My name is Poojy H. Starting my professional carrier in 2009. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
               <div className="desc2">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
               </div>
-              <div className="btn-download">
-                <p>Download CV</p>
-              </div>
+              <button className="btn-download">
+                <span>Download CV</span>
+              </button>
             </div>
           </div>
           
@@ -163,26 +195,16 @@ export default function About(){
 
           {/* STATISTICS -------------------- */}
           <div className="statistics">
-            <div className="item">
-              <p>72</p>
-              <div className="divide"></div>
-              <span>Happy clients</span>
-            </div>
-            <div className="item">
-              <p>136</p>
-              <div className="divide"></div>
-              <span>Projects</span>
-            </div>
-            <div className="item">
-              <p>27</p>
-              <div className="divide"></div>
-              <span>Awards</span>
-            </div>
-            <div className="item">
-              <p>2988</p>
-              <div className="divide"></div>
-              <span>Followers</span>
-            </div>
+            {
+              statistics.map((item, idx) => (
+                <div key={`key-${idx}`} className="item">
+                  <p>{item.count}</p>
+                  <div className="divide"></div>
+                  <span>{item.name}</span>
+                </div>
+              ))
+            }
+            
           </div>
         
           <div className="space"></div>

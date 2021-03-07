@@ -9,7 +9,27 @@
       // ABOUT ME ===========================
       .about-me{
         display: grid;
+        .col-left{
+          .fade-in{
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+          }
+          .appear{
+            opacity: 1
+          }
+        }
         .col-right{
+          &.fade-in{
+            opacity: 0;
+            transform: translateY(50%);
+            transition: transform 2 ease-in-out;
+
+          }
+          &.appear{
+            opacity: 1;
+            transform: translateY(-50%);
+          }
+
           .desc1{
             font-size: 1.1rem;
             color: theme.$colorFontLight;
@@ -26,11 +46,15 @@
           }
           .btn-download{
             margin-top: 2rem;
+            border: none;
             
-            p{
+            &:hover{
+              cursor: pointer;
+            }
+            span{
               display: inline-block;
-              border: 1px solid red;
               font-size: 1.2rem;
+              color: theme.$colorFontLight;
               padding: 1rem 1.5rem;
               text-transform: uppercase;
               background-color: theme.$colorBgPrimary;
