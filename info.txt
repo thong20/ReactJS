@@ -14,10 +14,27 @@ Bước 2: viết menu
   Sử dụng thẻ <nav>...</nav> bọc toàn bộ menu
 
 
+Lazy-loading ------------------------------------------
+Để tạo hiệu ứng lazy-loading ta sử dụng: new IntersectionObserver(callback, options)
+
+- Ở hiệu ứng lazy-loading progress-value, ta sử dụng data-* attribute
+- Ở hiệu ứng lazy-loading statistics, ta sử dụng requestsAnimiationFrame(callback)
+
+
+
+
 TODO:
-[ ] pagination: About Page
-[ ] Animated Navbar when scroll
-[ ] Lazy loading
+  # Menu Navbar
+    [x] Frosted Glass Effect for Responsive and Desktop screen (with CSS)
+    [x] show/hide when scroll (with JS)
+  # About Page
+    [x] render progress-value on scroll (with JS & data-attribute)
+    [x] pagination (with JS)
+    [x] slider Effect on scroll (with JS)
+    [x] jump number Effect on scroll (with JS)
+  # Contact Page
+    [x] Animated Label on focus (with CSS)
+    [x] Animated Label on valid (with JS)
 
 
 

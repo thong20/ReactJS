@@ -44,7 +44,7 @@
             background: none;
             border: none;
             border-bottom: 1px solid theme.$colorFontGray;
-            color: theme.$colorFontGray;
+            color: theme.$colorFontLight;
             padding-bottom: .8rem;
             outline: none;
             width: 100%;
@@ -62,6 +62,7 @@
             &:focus + label{
               transform: translateY(0%);
             }
+            
 
             
           }

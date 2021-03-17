@@ -1,27 +1,24 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './_contact.scss'
 import PropTypes from 'prop-types'
 import Banner from '../../Components/Banner/Banner'
 
 import img from '../../images/contact.jpg'
 export default function Contact(){
-  const [hasContent, setHasContent] = useState(false)
 
-  const inputArr = document.querySelectorAll('input[type=text]')
-  const labelArr = document.querySelectorAll('label')
-
-  labelArr.forEach(label => {
-    if(hasContent){
-      label.classList.add('has-content')
-    }else{
-      label.classList.remove('has-content')
-    }
+  useEffect(() => {
+    const inputArr = document.querySelectorAll('input[type=text]')
+    inputArr.forEach(input => {
+      input.addEventListener('change', (e) => {
+        // console.log('e.target:', e.target.id)
+        if(e.target.value){
+          document.querySelector(`label[for=${e.target.id}]`).classList.add('has-content')
+        }else{
+          document.querySelector(`label[for=${e.target.id}]`).classList.remove('has-content')
+        }
+      })
+    })
   })
-
-  function test(){
-    setHasContent(!hasContent)
-  }
-
   return (
     <div id='Contact'>
       <Banner src={img}/>
@@ -62,7 +59,6 @@ export default function Contact(){
                 <input type="submit" value='Send message'/>
               </div>
             </form>
-            <button onClick={test}>Test Form</button>
           </div>
         </div>
 

@@ -64,3 +64,29 @@ a{
   }
 
 }
+
+h3.title.slider{
+  opacity: 0;
+  margin-left: 8rem;
+  padding-top: 2rem;
+  transition: all .5s ease-in-out;
+}
+h3.title.slider.appear{
+  opacity: 1;
+  margin-left: 0;
+}
+
+.slider{
+  opacity: 1;
+  padding-top: 8rem;
+  transition: all .5s ease-in-out;
+}
+.appear{
+  opacity: 1;
+  // background-color: theme.$colorBgGray1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+

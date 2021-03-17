@@ -2,6 +2,15 @@
 
 #About{
   .container{
+    .rootMargin{
+      position: fixed;
+      width: 400px;
+      height: 2px;
+      background-color: yellow;
+      bottom: 200px;
+      left: 0;
+      z-index: 999;
+    }
     .banner{
     }
     .content{
@@ -10,47 +19,30 @@
       .about-me{
         display: grid;
         .col-left{
-          .fade-in{
-            opacity: 0;
-            transition: opacity 3s ease-in-out;
-          }
-          .appear{
-            opacity: 1
-          }
         }
         .col-right{
-          &.fade-in{
-            opacity: 0;
-            transform: translateY(50%);
-            transition: transform 2 ease-in-out;
-
-          }
-          &.appear{
-            opacity: 1;
-            transform: translateY(-50%);
-          }
-
+          
           .desc1{
             font-size: 1.1rem;
             color: theme.$colorFontLight;
             letter-spacing: 1.2px;
             line-height: 2rem;
+            
           }
           .desc2{
             font-size: 1rem;
             color: theme.$colorFontGray;
-            margin-top: 2rem;
+            // margin-top: 2rem;
             letter-spacing: 1px;
             line-height: 1.8rem;
 
           }
           .btn-download{
-            margin-top: 2rem;
+            // margin-top: 2rem;
             border: none;
+            cursor: pointer;
+            background-color: theme.$colorBgGray1;
             
-            &:hover{
-              cursor: pointer;
-            }
             span{
               display: inline-block;
               font-size: 1.2rem;
@@ -79,7 +71,8 @@
             align-items: center;
             .progress{
               width: 90%;
-              border: 1px solid red;
+              // border: 1px solid red;
+              background-color: rgb(105, 105, 105);
               margin-right: 1rem;
               height: .5rem;
               border-radius: .5rem;
@@ -88,6 +81,8 @@
                 background-color: theme.$colorBgPrimary;
                 height: 100%;
                 border-radius: .4rem;
+                width: 0;
+                transition: width 1s ease-in-out;
               }
             }
           }
@@ -103,10 +98,21 @@
           margin-bottom: 2rem;
         }
         .timeline{
-          border-left: 1px solid theme.$colorFontGray; // TEST
-          padding:  4rem 0 4rem 4rem;
+          border-left: 1px solid theme.$colorFontGray;
           position: relative;
-          
+          // border: 1px solid red; // TEST
+          padding-left: 2rem;
+        .timeline.slider{
+          opacity: 0;
+          padding: 12rem 0 4rem 4rem;
+        }
+        .timeline.slider.appear{
+          opacity: 1;
+          padding-top: 4rem 0 4rem 4rem;
+        }
+
+
+
           p:first-child{
             border: 1px solid red;
             padding: .6rem 1rem;
@@ -129,14 +135,14 @@
           p::before{
             content: '';
             display: inline-block;
-            width: .6rem;
-            height: .6rem;
+            width: .4rem;
+            height: .4rem;
             border-radius: 100%;
             background-color: theme.$colorBgPrimary;
             position: absolute;
             top: 50%;
-            left: -.6rem;
-            border: .3rem solid theme.$colorBgGray1;
+            left: -.65rem;
+            border: .4rem solid theme.$colorBgGray1;
           }
         }
       }
@@ -222,6 +228,28 @@
               text-align: justify;
             }
           }
+          .pagination{
+            display: grid;
+            grid-template-columns: 2rem 6rem 2rem;
+            grid-column-gap: 1rem;
+            font-size: 1.2rem;
+            button{
+              outline: none;
+              border: 1px solid theme.$colorBgGray2;
+              padding: .5rem;
+              border-radius: 6px;
+              background-color: #00000000;
+              // color: theme.$colorFontGray;
+              i{
+                font-size: 1.2rem;
+              }
+            }
+            p{
+              text-align: center;
+              padding: .5rem;
+            }
+          }
+          
         }
       }
 
@@ -250,6 +278,7 @@
       }
     }
   }
+
 
 
 
@@ -303,3 +332,5 @@
   }
 
 }
+
+
