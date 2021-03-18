@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import './about.scss'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch} from 'react-router-dom'
 
 import Banner from '../../Components/Banner/Banner'
 import imgAbout from '../../images/about3.jpg'
 
 import {skills, experience, statistics, education} from '../../constant/data'
 import Post from '../../Components/Post/Post'
+import Contact from '../Contact/Contact'
 
 
 export default function About(){
@@ -64,6 +65,10 @@ export default function About(){
     numbersJump.forEach(item => observer.observe(item))
   }
 
+  function goToContact(location){
+    window.scrollTo({top: 0, behavior: 'smooth'})
+    return ({...location, pathname: '/contact'})
+  }
 
   useEffect(() => {
     lazyLoading()
@@ -182,7 +187,7 @@ export default function About(){
             <div className="row col-2">
               <p>Let's build something awesome together</p>
               <div className="btn">
-                <button className='button-icon'>Contact me <i class="fas fa-paper-plane"></i></button>
+                <Link className='button-icon' to={location => goToContact(location)}>Contact me <i class="fas fa-paper-plane"></i></Link>
               </div>
             </div>
           </div>

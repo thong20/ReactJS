@@ -46,10 +46,10 @@
           text-align: center;
           p{
             font-size: 1.8rem;
+            margin-bottom: 2rem;
           }
           .button-icon{
             // style in App.scss
-            margin-top: 2rem;
           }
           // Landscape
           @media screen and (min-width: theme.$phoneLandscape) {

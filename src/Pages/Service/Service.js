@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import './_service.scss'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 import Banner from '../../Components/Banner/Banner'
+import {goToContact} from '../../features/goToContact'
 
 import imgService from '../../images/service.jpg'
 import imgOrderService from '../../images/imgOrderService.jpg'
@@ -85,7 +87,7 @@ export default function Service(){
               <div className="col-right slider">
                 <div className="block">
                   <p>Need my help in your project?</p>
-                  <button className='button-icon'>contact me <i class="fas fa-paper-plane"></i></button>
+                  <Link className='button-icon' to={location => goToContact(location)}>contact me <i class="fas fa-paper-plane"></i></Link>
                 </div>
               </div>
               
