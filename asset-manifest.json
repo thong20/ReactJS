@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ReactJS/static/css/main.40e2c7ea.chunk.css",
-    "main.js": "/ReactJS/static/js/main.c94224e3.chunk.js",
-    "main.js.map": "/ReactJS/static/js/main.c94224e3.chunk.js.map",
+    "main.js": "/ReactJS/static/js/main.29a23134.chunk.js",
+    "main.js.map": "/ReactJS/static/js/main.29a23134.chunk.js.map",
     "runtime-main.js": "/ReactJS/static/js/runtime-main.55ceef03.js",
     "runtime-main.js.map": "/ReactJS/static/js/runtime-main.55ceef03.js.map",
     "static/js/2.9a166b54.chunk.js": "/ReactJS/static/js/2.9a166b54.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/ReactJS/index.html",
     "static/css/main.40e2c7ea.chunk.css.map": "/ReactJS/static/css/main.40e2c7ea.chunk.css.map",
     "static/js/2.9a166b54.chunk.js.LICENSE.txt": "/ReactJS/static/js/2.9a166b54.chunk.js.LICENSE.txt",
-    "static/media/about3.66516714.jpg": "/ReactJS/static/media/about3.66516714.jpg",
+    "static/media/about3.f5770fe8.jpg": "/ReactJS/static/media/about3.f5770fe8.jpg",
     "static/media/contact.318b1a7a.jpg": "/ReactJS/static/media/contact.318b1a7a.jpg",
     "static/media/imgOrderService.2f832d6e.jpg": "/ReactJS/static/media/imgOrderService.2f832d6e.jpg",
     "static/media/service.7fdf4db3.jpg": "/ReactJS/static/media/service.7fdf4db3.jpg"
@@ -19,6 +19,6 @@
     "static/js/runtime-main.55ceef03.js",
     "static/js/2.9a166b54.chunk.js",
     "static/css/main.40e2c7ea.chunk.css",
-    "static/js/main.c94224e3.chunk.js"
+    "static/js/main.29a23134.chunk.js"
   ]
 }
