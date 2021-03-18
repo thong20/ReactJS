@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './App.scss';
-// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {HashRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+// import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
