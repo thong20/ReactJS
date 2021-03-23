@@ -39,17 +39,17 @@ export default function Navbar(){
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => closeMenu()} to='/about' exact activeClassName='active'>
+                <NavLink onClick={() => closeMenu()} to='/about' activeClassName='active'>
                   About
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink onClick={() => closeMenu()} to='/service' exact activeClassName='active'>
+                <NavLink onClick={() => closeMenu()} to='/service' activeClassName='active'>
                   Service
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink onClick={() => closeMenu()} to='/contact' exact activeClassName='active'>
+                <NavLink onClick={() => closeMenu()} to='/contact' activeClassName='active'>
                   Contact
                 </NavLink>
               </li>

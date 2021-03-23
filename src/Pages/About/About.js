@@ -89,7 +89,7 @@ export default function About(){
             </div>
             <div className="col-right">
               <div className="desc1 slider">
-                My name is Poojy H. Starting my professional carrier in 2009. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                My name is cmPhong. Starting my professional carrier in 2020. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
               <div className="desc2 slider">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
