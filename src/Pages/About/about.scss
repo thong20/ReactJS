@@ -273,6 +273,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            .button-icon{
+              // define in App.scss
+              &:hover{
+                border: 1px solid theme.$colorBgPrimary;
+              }
+            }
           }
           p{
             font-size: 2rem;
