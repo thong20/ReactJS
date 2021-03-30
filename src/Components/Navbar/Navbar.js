@@ -5,19 +5,33 @@ import {NavLink} from 'react-router-dom'
 
 import logo from '../../images/logo.png'
 import {enableScroll, disableScroll} from '../../features/disableScroll'
-export default function Navbar(){
-  
-  
+
+// Khai báo thuộc tính cho Component
+Navbar.propTypes = {
+  // step: PropTypes.object,
+  // onTodoClick: PropTypes.function,
+};
+
+// Gán giá trị mặc định cho props, khi
+// props không có giá trị
+Navbar.defaultProps = {
+  // todos: [],
+  // onTodoClick: null,
+};
+
+export default function Navbar(props){
+  const {setStep} = props
+
   function toggleMenu(){
     const menu = document.querySelectorAll('.nav-items')[0]
     menu.style.top = 0
     disableScroll()
   }
-  function closeMenu(){
+  function closeMenu(location){
     enableScroll();
-    window.scrollTo({top: 0})
     const menu = document.querySelectorAll('.nav-items')[0]
     menu.style.top = '100vh'
+    setStep(location)
   }
 
 
@@ -34,22 +48,22 @@ export default function Navbar(){
         <div className="menu">
           <ul className='nav-items'>
               <li className="nav-item">
-                <NavLink onClick={() => closeMenu()} to='/' exact activeClassName='active'>
+                <NavLink onClick={() => closeMenu('home')} to='/' exact activeClassName='active'>
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => closeMenu()} to='/about' activeClassName='active'>
+                <NavLink onClick={() => closeMenu('about')} to='/about' activeClassName='active'>
                   About
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink onClick={() => closeMenu()} to='/service' activeClassName='active'>
+                <NavLink onClick={() => closeMenu('service')} to='/service' activeClassName='active'>
                   Service
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink onClick={() => closeMenu()} to='/contact' activeClassName='active'>
+                <NavLink onClick={() => closeMenu('contact')} to='/contact' activeClassName='active'>
                   Contact
                 </NavLink>
               </li>
@@ -73,15 +87,4 @@ export default function Navbar(){
   )
 }
 
-// Khai báo thuộc tính cho Component
-Navbar.propTypes = {
-  // todos: PropTypes.array,
-  // onTodoClick: PropTypes.function,
-};
 
-// Gán giá trị mặc định cho props, khi
-// props không có giá trị
-Navbar.defaultProps = {
-  // todos: [],
-  // onTodoClick: null,
-};

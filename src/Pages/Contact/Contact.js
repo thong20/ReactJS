@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './_contact.scss'
 import PropTypes from 'prop-types'
-import Banner from '../../Components/Banner/Banner'
-
-import img from '../../images/contact.jpg'
 export default function Contact(){
 
   useEffect(() => {
@@ -21,7 +18,6 @@ export default function Contact(){
   })
   return (
     <div id='Contact'>
-      <Banner src={img}/>
       <div className="space"></div>
       <div className="container">
         {/* FORM ------------------------------------ */}

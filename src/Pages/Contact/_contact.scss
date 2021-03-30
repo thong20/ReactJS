@@ -81,6 +81,7 @@
         }
         .btn-submit{
           text-align: center;
+          background-image: url("../../images/home.jpg");
           input{
             border: 1px solid theme.$colorFontLight;
             background-color: transparent;
@@ -88,6 +89,10 @@
             font-size: .8rem;
             text-transform: uppercase;
             padding: .8rem 1rem;
+            &:hover{
+              border-color: red;
+              cursor: pointer;
+            }
             @media screen and (min-width: theme.$tablet) {
               
             }

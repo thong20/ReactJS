@@ -3,9 +3,6 @@ import './about.scss'
 import PropTypes from 'prop-types'
 import {Link, useRouteMatch} from 'react-router-dom'
 
-import Banner from '../../Components/Banner/Banner'
-import imgAbout from '../../images/about3.jpg'
-
 import {skills, experience, statistics, education} from '../../constant/data'
 import Post from '../../Components/Post/Post'
 import Contact from '../Contact/Contact'
@@ -79,7 +76,6 @@ export default function About(){
     <div id='About'>
       <div className="container">
         {/* <div className="rootMargin"></div> */}
-        <Banner src={imgAbout}/>
         <div className="space"></div>
         <div className="content">
           {/* ABOUT ME ----------------------- */}

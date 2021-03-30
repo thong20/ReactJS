@@ -3,10 +3,8 @@ import './_service.scss'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-import Banner from '../../Components/Banner/Banner'
 import {goToContact} from '../../features/goToContact'
 
-import imgService from '../../images/service.jpg'
 import imgOrderService from '../../images/imgOrderService.jpg'
 
 const icons = {
@@ -60,7 +58,6 @@ export default function Service(){
   return (
     <div id='Service'>
       <div className="container">
-        <Banner src={imgService}/>
 
         <div className="space"></div>
         
