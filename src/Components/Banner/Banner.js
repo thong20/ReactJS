@@ -24,7 +24,7 @@ Banner.defaultProps = {
 };
 
 export default function Banner(props) {
-  const {step, setStep} = props.step
+  const {step} = props
   const [firstRender, setFirstRender] = useState(true)
   const location = useLocation();
 

@@ -50,6 +50,9 @@
           }
           .button-icon{
             // style in App.scss
+            &:hover{
+              border: 1px solid theme.$colorBgPrimary;
+            }
           }
           // Landscape
           @media screen and (min-width: theme.$phoneLandscape) {

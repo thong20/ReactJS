@@ -32,12 +32,11 @@ function App() {
     })
   })
 
-  const fn = (str) => console.log(str)
   return (
     <Router>
       <div className="App">
         <Navbar setStep={setStep}/>
-        <Banner step={{step, setStep}}/>
+        <Banner step={step}/>
         <Switch>
           <Route path='/' exact>
             <Home />
