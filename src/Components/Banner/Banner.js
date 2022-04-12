@@ -3,7 +3,7 @@ import "./banner.scss";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 
-import imageAbout from "../../images/about3.jpg";
+import imageAbout from "../../images/about.jpg";
 import imageContact from "../../images/contact.jpg";
 import imageHome from "../../images/home.jpg";
 import imageService from "../../images/service.jpg";
