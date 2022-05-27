@@ -91,7 +91,7 @@ export default function About(){
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
               </div>
               <button className="btn-download slider" onClick={() => {
-                window.open("https://drive.google.com/file/d/1-HBxxo-Fk791dsJpcSrO39NHCebBzykq/view?usp=sharing")
+                window.open("https://drive.google.com/file/d/14rmDqg_V3d2ml-Pk0kKko8HhIgCGPD5m/view?usp=sharing")
               }}>
                 <span>Download CV</span>
               </button>
