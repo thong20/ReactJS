@@ -8,7 +8,7 @@ import imageContact from "../../images/contact.jpg";
 import imageHome from "../../images/home.jpg";
 import imageService from "../../images/service.jpg";
 
-import { slideshowAnimated } from '../../features/slideshowAnimated'
+import {slideshowAnimated} from '../../features/slideshowAnimated'
 
 // Khai báo thuộc tính cho Component
 Banner.propTypes = {
@@ -24,7 +24,7 @@ Banner.defaultProps = {
 };
 
 export default function Banner(props) {
-  const { step } = props
+  const {step} = props
   const [firstRender, setFirstRender] = useState(true)
   const location = useLocation();
 
@@ -36,14 +36,14 @@ export default function Banner(props) {
     return 0;
   }
   useEffect(() => {
-    if (!firstRender) {
+    if(!firstRender){
       const carousel = document.querySelector(".carousel");
       const imgTags = document.querySelectorAll(".carousel img");
-      if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-        slideshowAnimated({ imgTags, carousel, index: n(step), delay: 0.7 })
-      } else {
-        slideshowAnimated({ imgTags, carousel, index: n(step) })
+      if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
+        window.scrollTo({top: 0, behavior: 'smooth'})
+        slideshowAnimated({imgTags, carousel, index: n(step), delay: 0.7})
+      }else{
+        slideshowAnimated({imgTags, carousel, index: n(step)})
       }
     }
   }, [step])
@@ -51,27 +51,18 @@ export default function Banner(props) {
   useEffect(() => {
     const carousel = document.querySelector(".carousel");
     const imgTags = document.querySelectorAll(".carousel img");
-    if (location.pathname !== '/' && location.pathname !== '/home') {
-      slideshowAnimated({ imgTags, carousel, index: n(location.pathname.substring(1)) })
+    if(location.pathname !== '/' && location.pathname !== '/home'){
+      slideshowAnimated({imgTags, carousel, index: n(location.pathname.substring(1))})
     }
     setFirstRender(false)
-  }, []);
-
+  },[]);
+  
   return (
     <div id="Banner">
       {/* <img src={src} alt=""/> */}
       <div className="carousel">
         <div id="img-home" className="img-item">
-          <div id="info">
-            <h2 id="greeting">Hi!, I'm M.Phong</h2>
-            <div className="text-animate">
-              <h3>Frontend Developer</h3>
-            </div>
-            <p id="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <button>Hire me</button>
-          </div>
           <img src={imageHome} alt="Home" />
-
         </div>
         <div id="img-about" className="img-item">
           <img src={imageAbout} alt="About" />
