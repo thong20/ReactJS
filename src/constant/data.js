@@ -3,7 +3,7 @@ export const customers = [
   {
     id: "01",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -11,7 +11,7 @@ export const customers = [
   {
     id: "02",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -19,7 +19,7 @@ export const customers = [
   {
     id: "03",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -27,7 +27,7 @@ export const customers = [
   {
     id: "04",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -35,7 +35,7 @@ export const customers = [
   {
     id: "05",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -43,7 +43,7 @@ export const customers = [
   {
     id: "06",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -51,7 +51,7 @@ export const customers = [
   {
     id: "07",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -59,7 +59,7 @@ export const customers = [
   {
     id: "08",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -67,7 +67,7 @@ export const customers = [
   {
     id: "09",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -75,7 +75,7 @@ export const customers = [
   {
     id: "10",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -83,7 +83,7 @@ export const customers = [
   {
     id: "11",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -91,7 +91,7 @@ export const customers = [
   {
     id: "12",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -99,7 +99,7 @@ export const customers = [
   {
     id: "13",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -107,7 +107,7 @@ export const customers = [
   {
     id: "14",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -115,7 +115,7 @@ export const customers = [
   {
     id: "15",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -123,7 +123,7 @@ export const customers = [
   {
     id: "16",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -131,7 +131,7 @@ export const customers = [
   {
     id: "17",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -139,7 +139,7 @@ export const customers = [
   {
     id: "18",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -147,7 +147,7 @@ export const customers = [
   {
     id: "19",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -155,7 +155,7 @@ export const customers = [
   {
     id: "20",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -163,7 +163,7 @@ export const customers = [
   {
     id: "21",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -171,7 +171,7 @@ export const customers = [
   {
     id: "22",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -179,7 +179,7 @@ export const customers = [
   {
     id: "23",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -187,7 +187,7 @@ export const customers = [
   {
     id: "24",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -195,7 +195,7 @@ export const customers = [
   {
     id: "25",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -203,7 +203,7 @@ export const customers = [
   {
     id: "26",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -211,7 +211,7 @@ export const customers = [
   {
     id: "27",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -219,7 +219,7 @@ export const customers = [
   {
     id: "28",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -227,7 +227,7 @@ export const customers = [
   {
     id: "29",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -235,7 +235,7 @@ export const customers = [
   {
     id: "30",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -243,7 +243,7 @@ export const customers = [
   {
     id: "31",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -251,7 +251,7 @@ export const customers = [
   {
     id: "32",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -259,7 +259,7 @@ export const customers = [
   {
     id: "33",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -267,7 +267,7 @@ export const customers = [
   {
     id: "34",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -275,7 +275,7 @@ export const customers = [
   {
     id: "35",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -283,7 +283,7 @@ export const customers = [
   {
     id: "36",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -291,7 +291,7 @@ export const customers = [
   {
     id: "37",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -299,7 +299,7 @@ export const customers = [
   {
     id: "38",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -307,7 +307,7 @@ export const customers = [
   {
     id: "39",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -315,7 +315,7 @@ export const customers = [
   {
     id: "40",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -323,7 +323,7 @@ export const customers = [
   {
     id: "41",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -331,7 +331,7 @@ export const customers = [
   {
     id: "42",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -339,7 +339,7 @@ export const customers = [
   {
     id: "43",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -347,7 +347,7 @@ export const customers = [
   {
     id: "44",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -355,7 +355,7 @@ export const customers = [
   {
     id: "45",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."
@@ -363,7 +363,7 @@ export const customers = [
   {
     id: "46",
     name: "Cecilia Obotoh",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head2.jpg",
+    img: "head2.jpg",
     position: "HR of Susuko",
     post:
       "His work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!"
@@ -371,7 +371,7 @@ export const customers = [
   {
     id: "47",
     name: "Johnny Iskandar",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head3.jpg",
+    img: "head3.jpg",
     position: "CEO of Dandodot",
     post:
       "We were able to test our way from a 5% conversion rate, all the way up to 20%. Without driving any more traffic, our client is getting four times the leads that he was getting before."
@@ -379,7 +379,7 @@ export const customers = [
   {
     id: "48",
     name: "Mark Jojoba",
-    img: "https://themes.wip-themes.com/poojy/demo-images/heads/head1.jpg",
+    img: "head1.jpg",
     position: "CEO of Rocket Chicken",
     post:
       "Mr. Poojy is awesome! He did everything – with almost no time or effort for me! The best part was that I could completely trust him to represent our company professionally with our clients."

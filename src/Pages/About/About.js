@@ -78,6 +78,7 @@ export default function About(){
         {/* <div className="rootMargin"></div> */}
         <div className="space"></div>
         <div className="content">
+
           {/* ABOUT ME ----------------------- */}
           <div className="row about-me">
             <div className="col-left">

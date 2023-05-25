@@ -13,7 +13,6 @@ const theme = {
 // 1 - 0 => 3
 // 2 - 4 => 7
 // 3 - 8 => 11
-
 export default function Post (){
   const postPerPage = 4;
   const pageTotal = Math.ceil(customers.length / postPerPage);
@@ -46,18 +45,20 @@ export default function Post (){
   return (
     <>
     {
-      posts.map(post => (
+      posts.map(post => {
+        const avatar = './images/head1.jpg';
+        return (
         <div key={`key-${post.id}`} className="post ">
           <div className="profile">
             <div className="avatar">
-              <img src={post.img} alt="avatar"/>
+              <img src={require('../../images/' +post.img).default} alt="avatar"/>
             </div>
             <p>{post.name}</p>
             <p>{post.position}</p>
           </div>
           <div className="text">{post.id} - {post.post}</div>
         </div>
-      ))
+      )})
     }
     <div className="pagination">
       <button
