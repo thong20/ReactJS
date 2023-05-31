@@ -3,7 +3,6 @@
 import React, {useEffect} from 'react'
 import './Contact.scss';
 
-import emailjs from '@emailjs/browser';
 import {useFormik} from "formik";
 
 
