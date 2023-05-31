@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./banner.scss";
 import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import {Link, NavLink, useLocation} from "react-router-dom";
 
 import imageAbout from "../../images/about.jpg";
 import imageContact from "../../images/contact.jpg";
@@ -9,10 +9,13 @@ import imageHome from "../../images/home.jpg";
 import imageService from "../../images/service.jpg";
 
 import { slideshowAnimated } from '../../features/slideshowAnimated'
+import {goToContact} from "../../features/goToContact";
+import {enableScroll} from "../../features/disableScroll";
 
 // Khai báo thuộc tính cho Component
 Banner.propTypes = {
   src: PropTypes.string,
+  setStep: PropTypes.func, // passed from App.js
   // onTodoClick: PropTypes.function,
 };
 
@@ -24,8 +27,8 @@ Banner.defaultProps = {
 };
 
 export default function Banner(props) {
-  const { step } = props
-  const [firstRender, setFirstRender] = useState(true)
+  const { step, setStep } = props;
+  const [firstRender, setFirstRender] = useState(true);
   const location = useLocation();
 
   function n(str) {
@@ -35,6 +38,11 @@ export default function Banner(props) {
     if (str === "contact") return 3;
     return 0;
   }
+
+  function goTo(location){ // DUPLICATE IN Navbar.js
+    setStep(location)
+  }
+
   useEffect(() => {
     if (!firstRender) {
       const carousel = document.querySelector(".carousel");
@@ -68,7 +76,14 @@ export default function Banner(props) {
               <h3>Frontend Developer</h3>
             </div>
             <p id="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <button>Hire me</button>
+
+            <div className="btn-hire-me">
+              <Link onClick={() => goTo('contact')} to='/contact' exact>
+                <span>Hire me</span>
+              </Link>
+            </div>
+
+
           </div>
           <img src={imageHome} alt="Home" />
 

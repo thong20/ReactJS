@@ -36,7 +36,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar setStep={setStep}/>
-        <Banner step={step}/>
+        <Banner step={step} setStep={setStep}/>
         <Switch>
           <Route path='/' exact>
             <Home />

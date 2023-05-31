@@ -1,5 +1,6 @@
 @use '../../AppTheme' as theme;
 
+
 #Banner{
   height: 100vh;
   overflow: hidden;
@@ -13,7 +14,6 @@
       min-width: 100vw;
       
       #info{
-        // border: 5px solid red;
         // width: 30rem;
         position: absolute;
         top: 50%;
@@ -82,14 +82,14 @@
           font-size: 1.2rem;
         }
 
-        button{
+        .btn-hire-me{
           background-color: #ED4430;
-          border: 1px solid #ED4430;
-          border-radius: 0.5rem;
+          border-radius: .3rem;
           color: white;
           padding: .6rem 1rem;
           font-size: 1.2rem;
           margin-top: 1.5rem;
+          display: inline-block;
         }
 
         @media screen and (min-width: theme.$phonePortrait){

@@ -50,10 +50,10 @@
               color: theme.$colorFontLight;
               padding: 1rem 1.5rem;
               text-transform: uppercase;
-              background-color: theme.$colorBgPrimary;
+              background-color: theme.$colorAccent;
               &:active{
                 background-color: theme.$colorFontLight;
-                color: theme.$colorBgPrimary;
+                color: theme.$colorAccent;
               }
             }
           }
@@ -83,7 +83,7 @@
               border-radius: .5rem;
               padding: 1px;
               .progress-value{
-                background-color: theme.$colorBgPrimary;
+                background-color: theme.$colorAccent;
                 height: 100%;
                 border-radius: .4rem;
                 width: 0;
@@ -119,7 +119,7 @@
 
 
           p:first-child{
-            border: 1px solid red;
+            border: 1px solid theme.$colorAccent;
             padding: .6rem 1rem;
             display: inline-block;
           }
@@ -143,7 +143,7 @@
             width: .4rem;
             height: .4rem;
             border-radius: 100%;
-            background-color: theme.$colorBgPrimary;
+            background-color: theme.$colorAccent;
             position: absolute;
             top: 50%;
             left: -.65rem;
@@ -162,7 +162,7 @@
           text-align: center;
           margin: 1rem 0;
           p{
-            color: theme.$colorBgPrimary;
+            color: theme.$colorAccent;
             font-size: 2rem;
             font-weight: 300;
           }
@@ -276,7 +276,7 @@
             .button-icon{
               // define in App.scss
               &:hover{
-                border: 1px solid theme.$colorBgPrimary;
+                border: 1px solid theme.$colorAccent;
               }
             }
           }

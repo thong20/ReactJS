@@ -11,7 +11,7 @@
       border: 1px solid theme.$colorFontGray; // TEST
       padding: 2rem;
       &:hover{
-        border: 1px solid theme.$colorBgPrimary;
+        border: 1px solid theme.$colorAccent;
       }
       i:first-child{
         font-size: 3rem;
@@ -51,7 +51,7 @@
           .button-icon{
             // style in App.scss
             &:hover{
-              border: 1px solid theme.$colorBgPrimary;
+              border: 1px solid theme.$colorAccent;
             }
           }
           // Landscape

@@ -4,7 +4,7 @@ import React, {useEffect} from 'react'
 import './Contact.scss';
 
 import emailjs from '@emailjs/browser';
-import {useFormik} from "formik";
+import {useForm} from 'react-hook-form';
 
 
 export default function Contact(){
@@ -13,50 +13,7 @@ export default function Contact(){
   const SERVICE_ID = process.env.REACT_APP_SERVICE_ID_EMAILJS;
   const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID_EMAILJS;
 
-  const validate = values => {
-    console.log(values, 'line 17 =================');
-    const errors = {};
-
-    if (!values.firstName) {
-      errors.firstName = 'Required';
-    } else if (values.firstName.length > 15) {
-      errors.firstName = 'Must be 15 characters or less';
-    }
-
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!values.subject) {
-      errors.subject = 'Required';
-    } else if (values.subject.length > 80) {
-      errors.subject = 'Must be 200 characters or less';
-    }
-
-    if (!values.message) {
-      errors.message = 'Required';
-    } else if (values.message.length > 200) {
-      errors.message = 'Must be 400 characters or less';
-    }
-
-    return errors;
-  }
-  const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      subject: '',
-      message: ''
-    },
-    validate,
-    onSubmit: values => {
-      runAnimation();
-      sendMail();
-    },
-  });
+  const {register, handleSubmit} = useForm();
 
   const sendMail = () => {
     const tempate_Params = {
@@ -75,9 +32,9 @@ export default function Contact(){
     // send the message and get a callback with an error
     // or details of the message that was sent
     emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      tempate_Params,
+        SERVICE_ID,
+        TEMPLATE_ID,
+        tempate_Params,
     ).then(res => {
       console.log('SEND EMAIL SUCCESSFUL', res.status, res.text);
       form.firstName.value = "";
@@ -117,8 +74,16 @@ export default function Contact(){
     });
   }
 
+  const handleOnSubmit = (e) => {
+    console.log('handleOnSubmit()');
+    e.preventDefault();
+    runAnimation();
+    // sendMail();
+  }
+
+
   useEffect(() => {
-    const inputArr = document.querySelectorAll('input[type=text], input[type=email]')
+    const inputArr = document.querySelectorAll('input[type=text]')
     inputArr.forEach(input => {
       input.addEventListener('change', (e) => {
         // console.log('e.target:', e.target.id)
@@ -139,58 +104,31 @@ export default function Contact(){
         <div className="row">
           <h3 className="title">Let's talk or just say Hello</h3>
           <div className="form">
-            {/* Khi form submit, thì hàm thực thi là method handleSubmit của biến formik */}
-            {/* => các value trong form sẽ được truyền đến tham số của method "onSubmit" của biến formik */}
-            {/* ........................................ 👇👇👇👇👇👇 */}
-            <form id='form' name='form' onSubmit={formik.handleSubmit}>
+            <form id='form' name='form' onSubmit={(e) => handleOnSubmit(e)}>
               <div className="g-name">
                 <div className="row-form first-name">
-                  <input id='first-name' name='firstName' type="text"
-                         onChange={formik.handleChange}
-                         value={formik.values.firstName}
-                  />
+                  <input id='first-name' name='firstName' type="text" />
                   <label htmlFor="first-name">First name</label>
-                  {formik.errors.firstName ? <div className='validate-error'>{formik.errors.firstName}</div> : null}
                 </div>
-
                 <div className="row-form last-name">
-                  <input id='last-name' name='lastName' type="text"
-                         onChange={formik.handleChange}
-                         value={formik.values.lastName}
-                  />
+                  <input id='last-name' name='lastName' type="text" />
                   <label htmlFor="last-name">Last name</label>
-                  {/*{formik.errors.lastName ? <div className='validate-error'>{formik.errors.lastName}</div> : null}*/}
                 </div>
               </div>
-
+              
               <div className="row-form email">
-                <input id='email' name='email' type="email"
-                       onChange={formik.handleChange}
-                       value={formik.values.email}
-                />
+                <input id='email' name='email' type="email" />
                 <label htmlFor="email">Email</label>
-                {formik.errors.email ? <div className='validate-error'>{formik.errors.email}</div> : null}
               </div>
 
               <div className="row-form subject">
-                <input id='subject' name='subject' type="text"
-                       onChange={formik.handleChange}
-                       value={formik.values.subject}
-                />
+                <input id='subject' name='subject' type="text"/>
                 <label htmlFor="subject">Subject</label>
-                {formik.errors.subject ? <div className='validate-error'>{formik.errors.subject}</div> : null}
               </div>
 
               <div className="row-form message">
-                {/*<input id='message' name='message' type="text-area"/>*/}
-
-                <textarea id="message" name="message" rows="4" cols="80" style={{resize: 'none'}}
-                          onChange={formik.handleChange}
-                          value={formik.values.message}
-                />
-
+                <input id='message' name='message' type="text"/>
                 <label htmlFor="message">Message...</label>
-                {formik.errors.message ? <div className='validate-error'>{formik.errors.message}</div> : null}
               </div>
 
               {/* BUTTON SUBMIT 👇👇👇 */}
@@ -219,17 +157,17 @@ export default function Contact(){
             <div className="col-right">
               <span>Let's connect</span>
               <div className="social">
-                <i className="fab fa-linkedin"></i>
-                <i className="fab fa-facebook-square"></i>
-                <i className="fab fa-instagram"></i>
-                <i className="fab fa-github"></i>
-                <i className="fab fa-twitter"></i>
-                <i className="fab fa-youtube"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
               </div>
             </div>
           </div>
         </div>
-
+      
         {/* MAP ------------------------------------ */}
         <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.563147104309!2d106.61618146626569!3d10.76811212323752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752c3cf2614c69%3A0xe443a427e83ab329!2zNDU0IFTDom4gSMOyYSDEkMO0bmcsIELDrG5oIFRy4buLIMSQw7RuZywgQsOsbmggVMOibiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1614972315918!5m2!1sen!2s" width={'600%'} height={450} style={{border:0}} allowfullscreen="" loading="lazy"></iframe>
       </div>
