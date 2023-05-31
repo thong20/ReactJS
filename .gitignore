@@ -27,4 +27,3 @@ yarn-error.log*
 # my ignore
 .env
 info.txt
-README.md
