@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React from 'react'
 import './navbar.scss'
 import PropTypes from 'prop-types'
@@ -27,11 +29,14 @@ export default function Navbar(props){
     menu.style.top = 0
     disableScroll()
   }
-  function goTo(location){
+  function goTo(str_location){
     enableScroll();
     const menu = document.querySelectorAll('.nav-items')[0]
     menu.style.top = '100vh'
-    setStep(location)
+    $(function(){
+      $('html, body').animate({scrollTop: 0}, 600);
+    })
+    setStep(str_location)
   }
 
 

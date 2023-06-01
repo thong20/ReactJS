@@ -42,11 +42,11 @@ function App() {
             <Home />
           </Route>
           <Route path='/about'>
-            <About />
+            <About setStep={setStep}/>
             <Footer />
           </Route>
           <Route path='/service'>
-            <Service />
+            <Service setStep={setStep}/>
             <Footer />
           </Route>
           <Route path='/contact'>

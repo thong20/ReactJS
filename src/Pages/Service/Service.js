@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React, { useEffect } from 'react'
 import './_service.scss'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
-
-import {goToContact} from '../../features/goToContact'
 
 import imgOrderService from '../../images/imgOrderService.jpg'
 
@@ -15,7 +15,8 @@ const icons = {
   fingerprint: <i class="fas fa-fingerprint"></i>,
   mobile: <i class="fas fa-mobile-alt"></i>,
 }
-export default function Service(){
+export default function Service(props){
+  const {setStep} = props;
 
   const cards = [
     {icon: icons.search, title: 'ux research', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
@@ -24,7 +25,14 @@ export default function Service(){
     {icon: icons.layer, title: 'development', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
     {icon: icons.fingerprint, title: 'security', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
     {icon: icons.mobile, title: 'app design', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
-  ]
+  ];
+
+  const goTo = (str_location) => {
+    $(function(){
+      $('html, body').animate({scrollTop: 0}, 600);
+    })
+    setStep(str_location)
+  }
 
   function lazyLoading(){
     const options = {
@@ -84,7 +92,7 @@ export default function Service(){
               <div className="col-right slider">
                 <div className="block">
                   <p>Need my help in your project?</p>
-                  <Link className='button-icon' to={location => goToContact(location)}>contact me <i class="fas fa-paper-plane"></i></Link>
+                  <Link className='button-icon' onClick={() => goTo('contact')} to='/contact'>contact me <i class="fas fa-paper-plane"></i></Link>
                 </div>
               </div>
               

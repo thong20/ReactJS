@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./banner.scss";
 import PropTypes from "prop-types";
-import {Link, NavLink, useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 import imageAbout from "../../images/about.jpg";
 import imageContact from "../../images/contact.jpg";
@@ -9,8 +9,6 @@ import imageHome from "../../images/home.jpg";
 import imageService from "../../images/service.jpg";
 
 import { slideshowAnimated } from '../../features/slideshowAnimated'
-import {goToContact} from "../../features/goToContact";
-import {enableScroll} from "../../features/disableScroll";
 
 // Khai báo thuộc tính cho Component
 Banner.propTypes = {
@@ -86,7 +84,6 @@ export default function Banner(props) {
 
           </div>
           <img src={imageHome} alt="Home" />
-
         </div>
         <div id="img-about" className="img-item">
           <img src={imageAbout} alt="About" />

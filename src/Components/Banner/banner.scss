@@ -14,7 +14,6 @@
       min-width: 100vw;
       
       #info{
-        // width: 30rem;
         position: absolute;
         top: 50%;
         left: 0;
@@ -102,7 +101,7 @@
         height: 100%;
         object-fit: cover;
         filter: brightness(40%);
-        
+        object-position: 87%;
       }
     }
   }
@@ -114,7 +113,6 @@
   #Banner{
     #info{
       width: 20rem;
-    
 
       #greeting{
         font-size: 2rem;

@@ -1,15 +1,28 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React, {useEffect, useState} from 'react'
 import './about.scss'
 import PropTypes from 'prop-types'
-import {Link, useRouteMatch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import {skills, experience, statistics, education} from '../../constant/data'
 import Post from '../../Components/Post/Post'
-import Contact from '../Contact/Contact'
 
+// Khai báo thuộc tính cho Component
+About.propTypes = {
+  setStep: PropTypes.func, // passed from App.js
+  // onTodoClick: PropTypes.function,
+};
 
-export default function About(){
-  const [startNumber, setStartNumber] = useState(0)
+// Gán giá trị mặc định cho props, khi
+// props không có giá trị
+About.defaultProps = {
+  // todos: [],
+  // onTodoClick: null,
+};
+
+export default function About(props){
+  const {setStep} = props;
 
   function lazyLoading () {
     const faders = document.querySelectorAll(".slider")
@@ -62,9 +75,15 @@ export default function About(){
     numbersJump.forEach(item => observer.observe(item))
   }
 
-  function goToContact(location){
-    window.scrollTo({top: 0, behavior: 'smooth'})
-    return ({...location, pathname: '/contact'})
+  // function goToContact(location){
+  //   window.scrollTo({top: 0, behavior: 'smooth'})
+  //   return ({...location, pathname: '/contact'})
+  // }
+  const goTo = (str_location) => { // DUPLICATE IN Navbar.js
+    $(function(){
+      $('html, body').animate({scrollTop: 0}, 600);
+    })
+    setStep(str_location)
   }
 
   useEffect(() => {
@@ -186,7 +205,12 @@ export default function About(){
             <div className="row col-2">
               <p>Let's build something awesome together</p>
               <div className="btn">
-                <Link className='button-icon' to={location => goToContact(location)}>Contact me <i class="fas fa-paper-plane"></i></Link>
+                {/*<Link className='button-icon' to={location => goToContact(location)}>*/}
+                {/*  Contact me <i class="fas fa-paper-plane"></i>*/}
+                {/*</Link>*/}
+                <Link className='button-icon' onClick={() => goTo('contact')} to='/contact' exact>
+                  Contact me <i class="fas fa-paper-plane"></i>
+                </Link>
               </div>
             </div>
           </div>
