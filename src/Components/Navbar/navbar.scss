@@ -31,7 +31,12 @@
       img{
         object-fit: contain;
       }
+
+      &:hover{
+        cursor: pointer;
+      }
     }
+
 
     .menu{
       display: flex;
@@ -40,14 +45,11 @@
           display: grid;
           text-align: center;
           padding: 5px 20px;
-          
-          a{
-            color: theme.$colorFontGray;
-            padding: 5px;
-          }
-          a.active{
+
+          .active{
             border-bottom: 2px solid theme.$colorAccent
           }
+
         }
         button{
           display: none;
@@ -147,4 +149,5 @@
   }
 
 }
+
 

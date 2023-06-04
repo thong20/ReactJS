@@ -1,0 +1,17 @@
+// Navlink.scss
+
+@use '../../AppTheme' as theme;
+
+.Navlink{
+  width: 6rem;
+  color: theme.$colorFontGray;
+  padding: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+
+}
