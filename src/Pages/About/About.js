@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import './about.scss'
 import PropTypes from 'prop-types'
 
@@ -102,7 +102,6 @@ export default function About(props){
   return (
     <div id='About'>
       <div className="container">
-        {/* <div className="rootMargin"></div> */}
         <div className="space"></div>
         <div className="content">
 
@@ -138,7 +137,6 @@ export default function About(props){
                     <span>{item.name}</span>
                     <div className="progress-wrap">
                       <div className="progress">
-                        {/* <div className="progress-value" style={{width: `${item.skill}%`}}></div> */}
                         <div className="progress-value" data-value={item.skill}></div>
                       </div>
                       <span className='value'>{item.skill}%</span>

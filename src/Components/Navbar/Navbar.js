@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import './navbar.scss'
 import PropTypes from 'prop-types'
-import {useHistory} from 'react-router-dom'
 
 import logo from '../../images/logo.png'
 import {enableScroll, disableScroll} from '../../features/disableScroll'
@@ -29,8 +28,6 @@ Navbar.defaultProps = {
 export default function Navbar(props){
   let isOpenMenu = false;
   const {menus, setMenus, setStep, history} = props;
-  const page = history.location.pathname;
-
 
   function toggleMenu(){
     isOpenMenu = !isOpenMenu;

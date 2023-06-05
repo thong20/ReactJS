@@ -21,9 +21,6 @@ Service.defaultProps = {
   // onTodoClick: null,
 };
 
-
-
-
 const icons = {
   search: <i class="fas fa-search-plus"></i>,
   desktop: <i class="fas fa-desktop"></i>,
