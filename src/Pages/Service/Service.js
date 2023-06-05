@@ -1,11 +1,28 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react'
-import './_service.scss'
-import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
-
+import './Service.scss'
 import imgOrderService from '../../images/imgOrderService.jpg'
+import mLink from "../../Components/Link/mLink";
+import PropTypes from 'prop-types'
+
+// Khai báo thuộc tính cho Component
+Service.propTypes = {
+  setStep: PropTypes.func, // passed from App.js
+  setMenus: PropTypes.func, // passed from App.js
+  menus   : PropTypes.array, // passed from App.js
+  history : PropTypes.object, // passed from App.js
+};
+
+// Gán giá trị mặc định cho props, khi
+// props không có giá trị
+Service.defaultProps = {
+  // todos: [],
+  // onTodoClick: null,
+};
+
+
+
 
 const icons = {
   search: <i class="fas fa-search-plus"></i>,
@@ -16,7 +33,7 @@ const icons = {
   mobile: <i class="fas fa-mobile-alt"></i>,
 }
 export default function Service(props){
-  const {setStep} = props;
+  const {menus, setMenus, setStep, history} = props;
 
   const cards = [
     {icon: icons.search, title: 'ux research', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
@@ -27,12 +44,6 @@ export default function Service(props){
     {icon: icons.mobile, title: 'app design', desc: 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters' },
   ];
 
-  const goTo = (str_location) => {
-    $(function(){
-      $('html, body').animate({scrollTop: 0}, 600);
-    })
-    setStep(str_location)
-  }
 
   function lazyLoading(){
     const options = {
@@ -57,6 +68,24 @@ export default function Service(props){
   
     sliders.forEach(slider => observer.observe(slider))
 
+  }
+
+  const goToContact = () => { // DUPLICATE in About.js
+    console.log('goToContact()');
+    $(function(){
+      $('html').animate({scrollTop: 0}, 500, function(){
+        setStep('contact');
+        history.push('/contact');
+        updateMenu();
+      });
+
+      function updateMenu(){
+        const newMenus = menus.map(menu => ({...menu, isActive: false}));
+        const index = newMenus.findIndex(menu => menu.name===history.location.pathname.slice(1));
+        newMenus[index].isActive = true;
+        setMenus(newMenus);
+      }
+    })
   }
 
   useEffect(() => {
@@ -92,7 +121,9 @@ export default function Service(props){
               <div className="col-right slider">
                 <div className="block">
                   <p>Need my help in your project?</p>
-                  <Link className='button-icon' onClick={() => goTo('contact')} to='/contact'>contact me <i class="fas fa-paper-plane"></i></Link>
+                  <mLink className='button-icon' onClick={goToContact}>
+                    Contact me <i className="fas fa-paper-plane"></i>
+                  </mLink>
                 </div>
               </div>
               
@@ -103,16 +134,3 @@ export default function Service(props){
     </div>
   )
 }
-
-// Khai báo thuộc tính cho Component
-Service.propTypes = {
-  // todos: PropTypes.array,
-  // onTodoClick: PropTypes.function,
-};
-
-// Gán giá trị mặc định cho props, khi
-// props không có giá trị
-Service.defaultProps = {
-  // todos: [],
-  // onTodoClick: null,
-};

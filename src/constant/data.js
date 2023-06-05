@@ -1,3 +1,5 @@
+import {useHistory} from 'react-router-dom'
+
 
 export const customers = [
   {
@@ -440,7 +442,6 @@ export const education = [
   },
 ]
 
-
 export const statistics = [
   {count: 72, name: 'Happy Clients'},
   {count: 136, name: 'Projects'},
@@ -449,6 +450,13 @@ export const statistics = [
 ]
 
 
+
+// export const menus = [
+//   {name: 'home', isActive: history.location.pathname === '/home' || history.location.pathname === '/'},
+//   {name: 'about', isActive: history.location.pathname === '/about'},
+//   {name: 'service', isActive: history.location.pathname === '/service'},
+//   {name: 'contact', isActive: history.location.pathname === '/contact'},
+// ]
 
 
 

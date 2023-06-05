@@ -3,7 +3,6 @@
 import React, {useEffect, useState} from 'react'
 import './about.scss'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
 
 import {skills, experience, statistics, education} from '../../constant/data'
 import Post from '../../Components/Post/Post'
@@ -11,7 +10,9 @@ import Post from '../../Components/Post/Post'
 // Khai báo thuộc tính cho Component
 About.propTypes = {
   setStep: PropTypes.func, // passed from App.js
-  // onTodoClick: PropTypes.function,
+  setMenus: PropTypes.func, // passed from App.js
+  menus   : PropTypes.array, // passed from App.js
+  history : PropTypes.object, // passed from App.js
 };
 
 // Gán giá trị mặc định cho props, khi
@@ -22,7 +23,7 @@ About.defaultProps = {
 };
 
 export default function About(props){
-  const {setStep} = props;
+  const {menus, setMenus, setStep, history} = props;
 
   function lazyLoading () {
     const faders = document.querySelectorAll(".slider")
@@ -75,21 +76,28 @@ export default function About(props){
     numbersJump.forEach(item => observer.observe(item))
   }
 
-  // function goToContact(location){
-  //   window.scrollTo({top: 0, behavior: 'smooth'})
-  //   return ({...location, pathname: '/contact'})
-  // }
-  const goTo = (str_location) => { // DUPLICATE IN Navbar.js
+  const goToContact = () => { // DUPLICATE in Service.js
     $(function(){
-      $('html, body').animate({scrollTop: 0}, 600);
+      $('html').animate({scrollTop: 0}, 500, function(){
+        setStep('contact');
+        history.push('/contact');
+        updateMenu();
+      });
+
+      function updateMenu(){
+        const newMenus = menus.map(menu => ({...menu, isActive: false}));
+        const index = newMenus.findIndex(menu => menu.name===history.location.pathname.slice(1));
+        newMenus[index].isActive = true;
+        setMenus(newMenus);
+      }
     })
-    setStep(str_location)
   }
 
   useEffect(() => {
     lazyLoading()
-  
   })
+
+
 
   return (
     <div id='About'>
@@ -205,12 +213,11 @@ export default function About(props){
             <div className="row col-2">
               <p>Let's build something awesome together</p>
               <div className="btn">
-                {/*<Link className='button-icon' to={location => goToContact(location)}>*/}
-                {/*  Contact me <i class="fas fa-paper-plane"></i>*/}
-                {/*</Link>*/}
-                <Link className='button-icon' onClick={() => goTo('contact')} to='/contact' exact>
+
+                <mLink className='button-icon' onClick={goToContact}>
                   Contact me <i class="fas fa-paper-plane"></i>
-                </Link>
+                </mLink>
+
               </div>
             </div>
           </div>

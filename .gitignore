@@ -27,3 +27,5 @@ yarn-error.log*
 # my ignore
 .env
 info.txt
+Todo.txt
+

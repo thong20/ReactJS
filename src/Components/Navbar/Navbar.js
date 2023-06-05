@@ -3,17 +3,18 @@
 import React, {useEffect, useState} from 'react'
 import './navbar.scss'
 import PropTypes from 'prop-types'
-import {NavLink, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 import logo from '../../images/logo.png'
 import {enableScroll, disableScroll} from '../../features/disableScroll'
-import redirect from "react-router-dom/es/Redirect";
 import Navlink from "../Navlink/Navlink";
 
 // Khai báo thuộc tính cho Component
 Navbar.propTypes = {
-  setStep: PropTypes.func // passed from App.js
-  // onTodoClick: PropTypes.function,
+  setStep : PropTypes.func, // passed from App.js
+  setMenus: PropTypes.func, // passed from App.js
+  menus   : PropTypes.array, // passed from App.js
+  history : PropTypes.object, // passed from App.js
 };
 
 // Gán giá trị mặc định cho props, khi
@@ -23,41 +24,23 @@ Navbar.defaultProps = {
   // onTodoClick: null,
 };
 
-export default function Navbar(props){
-  const {setStep} = props
-  const history = useHistory();
-  const [menus, setMenus] = useState(() =>
-    [
-      {name: 'home', isActive: history.location.pathname === '/home' || history.location.pathname === '/'},
-      {name: 'about', isActive: history.location.pathname === '/about'},
-      {name: 'service', isActive: history.location.pathname === '/service'},
-      {name: 'contact', isActive: history.location.pathname === '/contact'},
-    ]
-  );
 
-  console.log('history:', history)
+
+export default function Navbar(props){
+  let isOpenMenu = false;
+  const {menus, setMenus, setStep, history} = props;
+  const page = history.location.pathname;
+
 
   function toggleMenu(){
+    isOpenMenu = !isOpenMenu;
     const menu = document.querySelectorAll('.nav-items')[0]
-    menu.style.top = 0
-    disableScroll()
+    menu.style.top = isOpenMenu ? 0 : '100vh';
+    isOpenMenu ? disableScroll() : enableScroll();
   }
 
-  // function goToHome(){
-  //   console.log('goToHome()');
-  //   $('html').animate({scrollTop: 0}, 600, function(){
-  //     setStep('home');
-  //     history.push('/');
-  //   });
-  // }
-
-
   function goTo(str_location, index){
-    enableScroll();
-    const menu = document.querySelectorAll('.nav-items')[0]
-    menu.style.top = '100vh'; // 👈👈 for menu responsive
-    // $('html').animate({scrollTop: 0}, 600);
-    // setStep(str_location)
+    if(isOpenMenu) toggleMenu();
 
     $(function(){
       $('html').animate({scrollTop: 0}, 500, function(){
@@ -89,7 +72,7 @@ export default function Navbar(props){
                 </li>
               ))
             }
-            <button onClick={() => goTo()}>Close</button>
+            <button onClick={toggleMenu}>Close</button>
           </ul>
 
           <div className="nav-btn">

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-// import {HashRouter as Router, Switch, Route} from 'react-router-dom'
+import {Switch, Route, useHistory} from 'react-router-dom'
 
 import Banner from './Components/Banner/Banner'
 import Home from './Pages/Home/Home'
@@ -12,7 +11,15 @@ import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  const [step, setStep] = useState('')
+  const [step, setStep] = useState('');
+  const history = useHistory();
+  const page = history.location.pathname;
+  const [menus, setMenus] = useState([
+    {name: 'home', isActive: page === '/home' || page === '/'},
+    {name: 'about', isActive: page === '/about'},
+    {name: 'service', isActive: page === '/service'},
+    {name: 'contact', isActive: page === '/contact'},
+  ]);
   
   useEffect(() => {
     const blurElem = document.getElementById('blur')
@@ -33,20 +40,19 @@ function App() {
   })
 
   return (
-    <Router>
       <div className="App">
-        <Navbar setStep={setStep}/>
-        <Banner step={step} setStep={setStep}/>
+        <Navbar setStep={setStep} menus={menus} setMenus={setMenus} history={history} />
+        <Banner step={step} setStep={setStep} />
         <Switch>
           <Route path='/' exact>
             <Home />
           </Route>
           <Route path='/about'>
-            <About setStep={setStep}/>
+            <About setStep={setStep} menus={menus} setMenus={setMenus} history={history} />
             <Footer />
           </Route>
           <Route path='/service'>
-            <Service setStep={setStep}/>
+            <Service setStep={setStep} menus={menus} setMenus={setMenus} history={history} />
             <Footer />
           </Route>
           <Route path='/contact'>
@@ -56,7 +62,6 @@ function App() {
         </Switch>
         
       </div>
-    </Router>
   );
 }
 
